@@ -3,7 +3,7 @@ import App from "./src/App";
 const routes = [
     {
         path: "/",
-        element: <App></App>
+        element: <App></App>,
     }
 ]
 
