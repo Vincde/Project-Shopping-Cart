@@ -1,12 +1,12 @@
 import { it, describe, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import routes from "../routes";
+import routes from "../src/routes";
 import { createMemoryRouter, RouterProvider } from "react-router";
 
 describe("Navigation bar", () => {
     
-    const router = createMemoryRouter(routes);
+    const router = createMemoryRouter(routes, {initialEntries:["/home"]});
     
     it("renders correct navigation", () => {
 
