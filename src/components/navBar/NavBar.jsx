@@ -1,4 +1,5 @@
 import { Link } from "react-router"
+import styles from "./navBar.module.css";
 
 export default function NavBar() {
     /*
@@ -7,7 +8,7 @@ export default function NavBar() {
 
     return(
         <>
-            <nav>
+            <nav className={styles.list}>
                 <ul>
                     <li>
                         <Link to="/home">Home</Link>
