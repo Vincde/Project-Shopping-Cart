@@ -11,6 +11,13 @@
     padding: 20px;
 }
 
+.list ul{
+    text-align: center;
+}
+
+.link img{
+    margin: 0 auto;
+}
 
 .list li{
     display:inline-block;
