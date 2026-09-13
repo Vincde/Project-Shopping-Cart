@@ -11,13 +11,13 @@ export default function NavBar() {
             <nav className={styles.list}>
                 <ul>
                     <li>
-                        <Link to="/home">Home</Link>
+                        <Link to="/home" className={styles.link}>Home</Link>
                     </li>
                     <li>
-                        <Link to="/shop">Go to Shop Page</Link>
+                        <Link to="/shop" className={styles.link}>Go to Shop Page</Link>
                     </li>
                     <li>
-                        <Link to="/cart">Go to Cart</Link>
+                        <Link to="/cart" className={styles.link}>Go to Cart</Link>
                     </li>
                 </ul>
             </nav>
