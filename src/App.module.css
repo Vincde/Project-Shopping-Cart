@@ -1,0 +1,16 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+:root{
+    --bcg_color_parent: #142d4c;
+    --bcg_color_child: #385170;
+    --border_color: #9fd3c7;
+    --shadow_color: #ececec;
+}
+
+body{
+    background-color: var(--bcg_color_parent);
+}
