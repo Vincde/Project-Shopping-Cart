@@ -9,6 +9,7 @@
     --bcg_color_child: #385170;
     --border_color: #9fd3c7;
     --shadow_color: #ececec;
+    --margin_base: 0 150px;
 }
 
 body{

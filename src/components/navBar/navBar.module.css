@@ -1,9 +1,19 @@
+/* 
+    global style list:
+        --bcg_color_child -- color for child elements
+        --bcg_color_parent -- color for parent elements
+        --border_color: color for borders
+        --shadow_color: color for shadows
+        --margin_base: base margin for dividing the body element
+*/
+
+
 .list{
     background-color: var(--bcg_color_child);
     border:2px solid var(--border_color);
     box-shadow: 1px 1px 3px var(--shadow_color);
     border-radius: 5px;
-    margin: 0 150px;
+    margin: var(--margin_base);
     padding: 20px;
 }
 
