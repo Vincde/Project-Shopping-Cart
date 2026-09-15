@@ -15,10 +15,19 @@
 
 }
 
+.errorPage h1{
+    margin-bottom: 20px;
+}
+
+.errorPage p{
+    color: red;
+}
 
 .link{
+    border:2px solid green;
+    border-radius: 5px;
     font-size: 1.2rem;
-    display: block;
+    display: inline-block;
     margin-top: 1.5rem;
     color: white;
 }
