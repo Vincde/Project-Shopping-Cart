@@ -1,4 +1,4 @@
-import { it, describe, expect } from "vitest";
+import { it, describe, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import routes from "../src/routes";
@@ -34,5 +34,18 @@ describe("ErrorPage", () => {
         expect(bttn).not.toBeInTheDocument();
 
 
-    })
+    });
+
+
+    it("Waiting for 3 seconds trigger the automatic navigation", () => {
+        render(<RouterProvider router={router}></RouterProvider>);
+        vi.useFakeTimers();
+
+        vi.advanceTimersByTime(3000);
+
+        expect(screen.getByText("Hello, welcome to our shop!")).toBeInTheDocument();
+
+        vi.runOnlyPendingTimers();
+        vi.useRealTimers();
+    });
 });
