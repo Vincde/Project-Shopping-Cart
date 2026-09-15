@@ -18,6 +18,6 @@ describe("Navigation bar", () => {
 
         render(<RouterProvider router={router}></RouterProvider>);
 
-        expect(screen.getByText(/home/i)).toBeInTheDocument();
+        expect(screen.getByAltText(/home/i)).toBeInTheDocument();
     });
 });
