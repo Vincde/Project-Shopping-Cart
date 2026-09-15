@@ -19,4 +19,20 @@ describe("ErrorPage", () => {
         expect(screen.getByText(/Or you can click here!/i)).toBeInTheDocument();
 
     });
+
+
+    it("renders the homepage after clicking the link", async () => {
+        const usr = userEvent.setup();
+
+        render(<RouterProvider router={router}></RouterProvider>);
+        
+        const bttn = screen.getByText(/Or you can click here!/i);
+
+        await usr.click(bttn);
+
+        expect(screen.getByText("Hello, welcome to our shop!")).toBeInTheDocument();
+        expect(bttn).not.toBeInTheDocument();
+
+
+    })
 });
