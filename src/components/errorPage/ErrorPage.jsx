@@ -5,7 +5,7 @@ export default function ErrorPage() {
     return(
         <div className={styles.errorPage}>
             <h1>Oh! there seems to be a problem here!</h1>
-            <Link to="./"></Link>
+            <Link to="/home" className={styles.link}>Go back to the Home Page</Link>
         </div>
     )
 }

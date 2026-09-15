@@ -1,4 +1,24 @@
+/* 
+    global style list:
+        --bcg_color_child -- color for child elements
+        --bcg_color_parent -- color for parent elements
+        --border_color: color for borders
+        --shadow_color: color for shadows
+        --margin_base: base margin for dividing the body element
+*/
+
+
 .errorPage{
     text-align: center;
-    margin-top: 15rem;
+    margin: 15rem;
+    color: white;
+
+}
+
+
+.link{
+    font-size: 1.2rem;
+    display: block;
+    margin-top: 1.5rem;
+    color: white;
 }
