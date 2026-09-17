@@ -11,6 +11,21 @@ function App() {
     render all the elements necessary for the three pages.
   */
 
+    /*
+      const {items, error, loading} = useItemsFetching();
+
+
+
+      export default function useItemsFetching() {
+        const [items, setItems] = useState();
+        const [loading, setLoading] = useState();
+        const [error, setError] = useState();
+
+
+      }
+    
+    
+    */
   
   
 
