@@ -10,6 +10,10 @@ function App() {
     This is the app: here we will
     render all the elements necessary for the three pages.
   */
+
+  
+  
+
   const [items, setItems] = useState([{name: "hello"}, {name: "Biagio"}]);
   const [cart, setCart] = useState([]);
 
@@ -17,7 +21,7 @@ function App() {
   <div>
     <NavBar></NavBar>
     {location === "home" ? (
-      <Home items={items} handleCart={setCart} cart={cart}></Home>
+      <Home items={items} setCart={setCart} cart={cart}></Home>
     ) : null}
   </div>
  )
