@@ -1,4 +1,4 @@
-// import { useState } from "react"
+import { useState } from "react"
 import NavBar from "./components/navBar/NavBar"
 import { useParams } from "react-router";
 import Home from "./components/home/Home"
@@ -10,14 +10,14 @@ function App() {
     This is the app: here we will
     render all the elements necessary for the three pages.
   */
-  // const [items, setItems] = useState({});
-
+  const [items, setItems] = useState({});
+  const [cart, setCart] = useState([]);
 
  return(
   <div>
     <NavBar></NavBar>
     {location === "home" ? (
-      <Home></Home>
+      <Home items={items} onClick={(el) => setCart([...cart, el])}></Home>
     ) : null}
   </div>
  )

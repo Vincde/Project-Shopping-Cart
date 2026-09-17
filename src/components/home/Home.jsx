@@ -1,4 +1,4 @@
-export default function Home(){
+export default function Home({items, onClick}){
 
     return(
         <div>
@@ -8,7 +8,15 @@ export default function Home(){
                     <h1>See our discounts!</h1>
                 </section>
                 <section>
-                    {/* Discounts go here... a small list of 5 elements with discount*/}
+                    {items.map((el) => {
+                        return(
+                            <div>
+                                <h3>Name: {el} </h3>
+                                <p>Descrizione</p>
+                                <button onClick={onClick}>Add to cart</button>
+                            </div>
+                        )
+                    })}
                 </section>
             </main>
         </div>
