@@ -1,4 +1,4 @@
-export default function Home({items, onClick}){
+export default function Home({items, handleCart, cart}){
 
     return(
         <div>
@@ -11,9 +11,9 @@ export default function Home({items, onClick}){
                     {items.map((el) => {
                         return(
                             <div>
-                                <h3>Name: {el} </h3>
+                                <h3>Name: {el.name} </h3>
                                 <p>Descrizione</p>
-                                <button onClick={onClick}>Add to cart</button>
+                                <button onClick={() => handleCart([...cart, el])}>Add to cart</button>
                             </div>
                         )
                     })}
