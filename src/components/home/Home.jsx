@@ -1,5 +1,4 @@
 function Home({items, setCart, cart}){
-
     return(
         <div>
             <main>
@@ -10,7 +9,7 @@ function Home({items, setCart, cart}){
                 <section>
                     {items.map((el) => {
                         return(
-                            <div>
+                            <div key={el.id}>
                                 <h3>Name: {el.title} </h3>
                                 <p>Description</p>
                                 <button onClick={() => setCart([...cart, el])}>Add to cart</button>
