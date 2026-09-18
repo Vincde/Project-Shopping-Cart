@@ -1,4 +1,4 @@
-export default function Home({items, setCart, cart}){
+function Home({items, setCart, cart}){
 
     return(
         <div>
@@ -11,8 +11,8 @@ export default function Home({items, setCart, cart}){
                     {items.map((el) => {
                         return(
                             <div>
-                                <h3>Name: {el.name} </h3>
-                                <p>Descrizione</p>
+                                <h3>Name: {el.title} </h3>
+                                <p>Description</p>
                                 <button onClick={() => setCart([...cart, el])}>Add to cart</button>
                             </div>
                         )
@@ -22,3 +22,6 @@ export default function Home({items, setCart, cart}){
         </div>
     );
 }
+
+
+export default Home;
