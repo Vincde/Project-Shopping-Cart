@@ -23,13 +23,13 @@ describe("Navigation bar", () => {
     
     const router = createMemoryRouter(routes, {initialEntries:["/home"]});
     
-    it("renders correct navigation", () => {
+    it("renders correct navigation",async () => {
 
         render(<RouterProvider router={router}></RouterProvider>);
 
-        expect(screen.getByAltText(/home/i)).toBeInTheDocument();
-        expect(screen.getByAltText(/shop/i)).toBeInTheDocument();
-        expect(screen.getByAltText(/cart/i)).toBeInTheDocument();
+        expect(await screen.findByAltText(/home/i)).toBeInTheDocument();
+        expect(await screen.findByAltText(/shop/i)).toBeInTheDocument();
+        expect(await screen.findByAltText(/cart/i)).toBeInTheDocument();
 
     });
 
