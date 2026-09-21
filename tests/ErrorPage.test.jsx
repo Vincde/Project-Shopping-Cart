@@ -7,6 +7,19 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
 
 describe("ErrorPage", () => {
+
+    const fetchMock = vi.fn();
+        globalThis.fetch = fetchMock;
+
+        fetchMock.mockResolvedValue({
+            status: 200,
+            ok: true,
+            json: async () => Promise.resolve({
+                id: "1",
+                title: "John"
+            })
+        })
+    
     
     const router = createMemoryRouter(routes, {initialEntries:["/"]});
     
@@ -30,22 +43,23 @@ describe("ErrorPage", () => {
 
         await usr.click(bttn);
 
-        expect(screen.getByText("Hello, welcome to our shop!")).toBeInTheDocument();
+        expect(await screen.findByText("Hello, welcome to our shop!")).toBeInTheDocument();
         expect(bttn).not.toBeInTheDocument();
 
 
     });
 
 
-    it("Waiting for 3 seconds trigger the automatic navigation", () => {
+    it("Waiting for 3 seconds trigger the automatic navigation", async () => {
+
         render(<RouterProvider router={router}></RouterProvider>);
         vi.useFakeTimers();
 
-        vi.advanceTimersByTime(3000);
+        await vi.advanceTimersByTimeAsync(3000);
 
-        expect(screen.getByText("Hello, welcome to our shop!")).toBeInTheDocument();
-
-        vi.runOnlyPendingTimers();
         vi.useRealTimers();
+
+        expect(await screen.findByText("Hello, welcome to our shop!")).toBeInTheDocument();       
     });
-});
+}); 
+
