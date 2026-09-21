@@ -1,4 +1,4 @@
-import { it, describe, expect } from "vitest";
+import { it, describe, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import routes from "../src/routes";
@@ -6,6 +6,20 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
 
 describe("Navigation bar", () => {
+
+
+    const fetchMock = vi.fn();
+        globalThis.fetch = fetchMock;
+
+        fetchMock.mockResolvedValue({
+            status: 200,
+            ok: true,
+            json: async () => Promise.resolve({
+                id: "1",
+                title: "John"
+            })
+        })
+    
     
     const router = createMemoryRouter(routes, {initialEntries:["/home"]});
     
@@ -31,7 +45,7 @@ describe("Navigation bar", () => {
 
         await usr.click(home);
 
-        expect(screen.getByRole("heading", {name: /Hello, welcome to our shop!/i}));
+        expect(await screen.findByRole("heading", {name: /Hello, welcome to our shop!/i}));
 
         // await usr.click(shop);
         // await usr.click(cart);
