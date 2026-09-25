@@ -45,7 +45,7 @@ describe("Navigation bar", () => {
 
         await usr.click(home);
 
-        expect(await screen.findByRole("heading", {name: /Hello, welcome to our shop!/i}));
+        expect(await screen.findByRole("heading", {name: /Hello, welcome to our shop!/i})).toBeInTheDocument();
 
         // await usr.click(shop);
         // await usr.click(cart);
