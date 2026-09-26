@@ -5,35 +5,39 @@ import routes from "../src/routes";
 import { createMemoryRouter, RouterProvider } from "react-router";
 
 
-describe("Navigation bar", () => {
+const mockFetch = vi.hoisted(() => ({
+        useItemsFetching: vi.fn(),
+    }))
 
+  vi.mock('./../src/components/useItemsFetching', () => ({
+        useItemsFetching: mockFetch.useItemsFetching,
+    }));
 
-    const fetchMock = vi.fn();
-        globalThis.fetch = fetchMock;
+    describe("Navigation bar", () => {
 
-        fetchMock.mockResolvedValue({
-            status: 200,
-            ok: true,
-            json: async () => Promise.resolve({
-                id: "1",
-                title: "John"
-            })
-        })
-    
-    
     const router = createMemoryRouter(routes, {initialEntries:["/home"]});
     
     it("renders correct navigation",async () => {
+        mockFetch.useItemsFetching.mockReturnValue({
+            items: [{id: 1, title: "hello"}],
+        error: false,
+        loading: false,
+        })
 
         render(<RouterProvider router={router}></RouterProvider>);
 
-        expect(await screen.findByAltText(/home/i)).toBeInTheDocument();
-        expect(await screen.findByAltText(/shop/i)).toBeInTheDocument();
-        expect(await screen.findByAltText(/cart/i)).toBeInTheDocument();
+        expect(screen.getByAltText(/home/i)).toBeInTheDocument();
+        expect(screen.getByAltText(/shop/i)).toBeInTheDocument();
+        expect(screen.getByAltText(/cart/i)).toBeInTheDocument();
 
     });
 
     it("Successfully clicks the links", async () => {
+        mockFetch.useItemsFetching.mockReturnValue({
+            items: [{id: 1, title: "hello"}],
+        error: false,
+        loading: false,
+        })
 
         render(<RouterProvider router={router}></RouterProvider>);
 
@@ -45,7 +49,7 @@ describe("Navigation bar", () => {
 
         await usr.click(home);
 
-        expect(await screen.findByRole("heading", {name: /Hello, welcome to our shop!/i})).toBeInTheDocument();
+        expect(screen.getByRole("heading", {name: /Hello, welcome to our shop!/i})).toBeInTheDocument();
 
         // await usr.click(shop);
         // await usr.click(cart);

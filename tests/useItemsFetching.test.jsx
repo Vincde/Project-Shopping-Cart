@@ -2,7 +2,6 @@ import { describe, it, expect, vi } from "vitest";
 import { createMemoryRouter, RouterProvider } from "react-router";
 import routes from "../src/routes";
 import { render, screen } from "@testing-library/react";
-import { act } from "@testing-library/react";
 
     const mockFetch = vi.hoisted(() => ({
         useItemsFetching: vi.fn(),
@@ -14,11 +13,11 @@ import { act } from "@testing-library/react";
         
 
 
-describe("useItemsFetching", () => {
+    describe("useItemsFetching", () => {
     const router = createMemoryRouter(routes, {initialEntries:["/home"]});
   
 
-    it("returns items, no error, loading false",async () => {
+    it("returns items, no error, loading false", () => {
         mockFetch.useItemsFetching.mockReturnValue({
             items: [{id: 1, title: "hello"}],
         error: false,
@@ -27,18 +26,13 @@ describe("useItemsFetching", () => {
 
         render(<RouterProvider router={router}></RouterProvider>);
 
-        vi.useFakeTimers();
-        await act(async () => {
-            await vi.advanceTimersByTimeAsync(3000);
-        });
-
-        vi.useRealTimers();
-        expect(await screen.findByRole("heading", {name: /See our discounts!/i})).toBeInTheDocument();
+        
+        expect(screen.getByRole("heading", {name: /See our discounts!/i})).toBeInTheDocument();
         
     })
 
 
-    it("returns items, no error, loading false",async () => {
+    it("returns null, error set, loading false", () => {
         mockFetch.useItemsFetching.mockReturnValue({
             items: null,
             error: true,
@@ -48,13 +42,7 @@ describe("useItemsFetching", () => {
 
         render(<RouterProvider router={router}></RouterProvider>);
 
-        vi.useFakeTimers();
-        await act(async () => {
-            await vi.advanceTimersByTimeAsync(3000);
-        });
-
-        vi.useRealTimers();
-        expect(await screen.findByText(/A network error was encountered/i)).toBeInTheDocument();
+        expect(screen.getByText(/A network error was encountered/i)).toBeInTheDocument();
         
     })
 })
