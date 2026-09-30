@@ -13,7 +13,10 @@ function App() {
   */
   
   
-  const {items, error, loading} = useItemsFetching();
+  // const {items, error, loading} = useItemsFetching();
+  const loading = false;
+  const error = false;
+  const items = [{id: 1, title: "hello", description: "AH u here!"}];
   const [cart, setCart] = useState([]);
 
  return(
