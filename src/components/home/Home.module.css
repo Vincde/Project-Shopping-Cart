@@ -17,6 +17,7 @@
 }
 
 .itemsContainer{
+    margin-top:30px;
     border:2px solid red;
     display: grid;
     grid-template-rows:1fr;
@@ -24,5 +25,11 @@
 }
 
 .singleItem{
+    text-align: center;
     border:2px solid yellow;
+    margin: 0 5rem;
 }
+
+/* .singleItem p {
+    text-overflow: ellipsis;
+} */

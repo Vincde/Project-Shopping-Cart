@@ -15,3 +15,7 @@
 body{
     background-color: var(--bcg_color_parent);
 }
+
+img{
+    max-width: 150px;
+}
