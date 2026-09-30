@@ -1,15 +1,17 @@
+import styles from "./Home.module.css"
+
 function Home({items, setCart, cart}){
     return(
         <div>
             <main>
-                <section>
+                <section className={styles.title}>
                     <h1>Hello, welcome to our shop!</h1>
-                    <h1>See our discounts!</h1>
+                    <h2>See our discounts!</h2>
                 </section>
-                <section>
+                <section className={styles.itemsContainer}>
                     {items.map((el) => {
                         return(
-                            <div key={el.id}>
+                            <div key={el.id} className={styles.singleItem}>
                                 <h3>Name: {el.title} </h3>
                                 <p>Description</p>
                                 <button onClick={() => setCart([...cart, el])}>Add to cart</button>

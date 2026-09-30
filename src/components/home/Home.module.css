@@ -6,3 +6,23 @@
         --shadow_color: color for shadows
         --margin_base: base margin for dividing the body element
 */
+
+.title{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.title h1{
+    margin-bottom: 20px;
+}
+
+.itemsContainer{
+    border:2px solid red;
+    display: grid;
+    grid-template-rows:1fr;
+    grid-template-columns:1fr 1fr 1fr;
+}
+
+.singleItem{
+    border:2px solid yellow;
+}
