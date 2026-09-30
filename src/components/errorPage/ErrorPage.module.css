@@ -24,7 +24,8 @@
 }
 
 .link{
-    border:2px solid green;
+    border:2px solid rgb(71, 116, 71);
+    text-decoration: none;
     border-radius: 5px;
     font-size: 1.2rem;
     display: inline-block;

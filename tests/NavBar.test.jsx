@@ -48,6 +48,7 @@ const mockFetch = vi.hoisted(() => ({
         // const cart = screen.getByAltText(/cart/i);
 
         await usr.click(home);
+        
 
         expect(screen.getByRole("heading", {name: /Hello, welcome to our shop!/i})).toBeInTheDocument();
 

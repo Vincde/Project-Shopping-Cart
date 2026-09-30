@@ -4,11 +4,11 @@ import userEvent from "@testing-library/user-event";
 import routes from "../src/routes";
 import { createMemoryRouter, RouterProvider } from "react-router";
 
-const mockFetch = vi.hoisted(() => ({
+    const mockFetch = vi.hoisted(() => ({
         useItemsFetching: vi.fn(),
     }))
 
-  vi.mock('./../src/components/useItemsFetching', () => ({
+    vi.mock('./../src/components/useItemsFetching', () => ({
         useItemsFetching: mockFetch.useItemsFetching,
     }));
 
