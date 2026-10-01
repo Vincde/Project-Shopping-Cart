@@ -19,7 +19,12 @@ import { createMemoryRouter, RouterProvider } from "react-router";
     
     it("renders error page",async () => {
         mockFetch.useItemsFetching.mockReturnValue({
-            items: [{id: 1, title: "hello"}],
+            items: [{id: 1,
+                title: "hello", 
+                description: "aaa", 
+                image: "#", 
+                price: "3.15", 
+                rating: {rate: 4.5}}],
         error: false,
         loading: false,
         })
@@ -35,7 +40,12 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
     it("renders the homepage after clicking the link", async () => {
         mockFetch.useItemsFetching.mockReturnValue({
-            items: [{id: 1, title: "hello"}],
+            items: [{id: 1,
+                title: "hello", 
+                description: "aaa", 
+                image: "#", 
+                price: "3.15", 
+                rating: {rate: 4.5}}],
         error: false,
         loading: false,
         })
@@ -55,7 +65,12 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
     it("Waiting for 3 seconds trigger the automatic navigation", async () => {
         mockFetch.useItemsFetching.mockReturnValue({
-            items: [{id: 1, title: "hello"}],
+            items: [{id: 1,
+                title: "hello", 
+                description: "aaa", 
+                image: "#", 
+                price: "3.15", 
+                rating: {rate: 4.5}}],
         error: false,
         loading: false,
         })

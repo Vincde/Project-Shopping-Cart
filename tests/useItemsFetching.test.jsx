@@ -19,7 +19,12 @@ import { render, screen } from "@testing-library/react";
 
     it("returns items, no error, loading false", () => {
         mockFetch.useItemsFetching.mockReturnValue({
-            items: [{id: 1, title: "hello"}],
+            items: [{id: 1,
+                title: "hello", 
+                description: "aaa", 
+                image: "#", 
+                price: "3.15", 
+                rating: {rate: 4.5}}],
         error: false,
         loading: false,
         })
@@ -44,5 +49,6 @@ import { render, screen } from "@testing-library/react";
 
         expect(screen.getByText(/A network error was encountered/i)).toBeInTheDocument();
         
+
     })
 })

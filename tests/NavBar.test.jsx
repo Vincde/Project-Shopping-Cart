@@ -19,7 +19,12 @@ const mockFetch = vi.hoisted(() => ({
     
     it("renders correct navigation",async () => {
         mockFetch.useItemsFetching.mockReturnValue({
-            items: [{id: 1, title: "hello"}],
+            items: [{id: 1,
+                title: "hello", 
+                description: "aaa", 
+                image: "#", 
+                price: "3.15", 
+                rating: {rate: 4.5}}],
         error: false,
         loading: false,
         })
@@ -34,7 +39,12 @@ const mockFetch = vi.hoisted(() => ({
 
     it("Successfully clicks the links", async () => {
         mockFetch.useItemsFetching.mockReturnValue({
-            items: [{id: 1, title: "hello"}],
+            items: [{id: 1,
+                title: "hello", 
+                description: "aaa", 
+                image: "#", 
+                price: "3.15", 
+                rating: {rate: 4.5}}],
         error: false,
         loading: false,
         })
