@@ -5,15 +5,17 @@
 }
 
 :root{
-    --bcg_color_parent: #142d4c;
-    --bcg_color_child: #385170;
-    --border_color: #9fd3c7;
-    --shadow_color: #ececec;
+    --bcg_color_parent: #0B0f17;
+    --bcg_color_child: #192134;
+    --border_color: #232F42;
+    --shadow_color: #94A3B8;
+    --primary_font: #F8FAFC;
     --margin_base: 0 150px;
 }
 
 body{
     background-color: var(--bcg_color_parent);
+    color: var(--primary_font);
 }
 
 img{

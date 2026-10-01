@@ -1,11 +1,6 @@
-/* 
-    global style list:
-        --bcg_color_child -- color for child elements
-        --bcg_color_parent -- color for parent elements
-        --border_color: color for borders
-        --shadow_color: color for shadows
-        --margin_base: base margin for dividing the body element
-*/
+.homeContainer{
+    margin: var(--margin_base);
+}
 
 .title{
     text-align: center;
@@ -17,8 +12,9 @@
 }
 
 .itemsContainer{
+    background-color: var(--bcg_color_child);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     margin-top:30px;
-    border:2px solid red;
     display: grid;
     grid-template-rows:1fr;
     grid-template-columns:1fr 1fr 1fr;
@@ -26,7 +22,6 @@
 
 .singleItem{
     text-align: center;
-    border:2px solid yellow;
     margin: 0 5rem;
 }
 
