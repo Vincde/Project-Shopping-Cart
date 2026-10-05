@@ -33,8 +33,9 @@ export function useItemsFetching() {
       const items = [
         {id: 1, title: "hello", description: "AH u here!", image: frutta1, price: "3.15", rating: {rate: 4.5}},
         {id: 2, title: "Element 2", description: "Element 2 is a good thing", image: frutta2, price: 3.13, rating: {rate: 0.0}},
-        {id: 3, title: "Element 3", description: "Elm 3 is not a good thing anymore, but it used to be", image: frutta3, price: 3.54, rating: {rate: 1.5}}
-      ];
+        {id: 3, title: "Element 3", description: "Elm 3 is not a good thing anymore, but it used to be", image: frutta3, price: 3.54, rating: {rate: 1.5}},
+        {id: 4, title: "Oddio la burro", description: "ahahah", image: "#", price: "4.32", rating: {rate: 2.2}},
+    ];
 
       return {items, error, loading};
 }
