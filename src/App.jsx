@@ -27,7 +27,7 @@ function App() {
     ) : !loading && !error && location === "home" && (
       <Home items={items} setCart={setCart} cart={cart}></Home>
     )
-    };
+    }
     
   </div>
  )
