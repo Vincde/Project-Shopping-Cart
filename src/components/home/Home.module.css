@@ -5,6 +5,9 @@
 .title{
     text-align: center;
     margin-top: 30px;
+    background-color : var(--bcg_color_child);
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .title h1{
@@ -26,10 +29,10 @@
     border: 1px solid white;
     border-radius: 10px;
     text-align: center;
-    margin: 2rem;
+    margin: 32px;
     overflow:hidden;
     white-space: nowrap;
-    transition: all 0.5s linear ;
+    transition: all 0.1s linear ;
 }
 
 .singleItem:hover{
@@ -41,4 +44,15 @@
 .singleItem p{
     overflow:hidden;
     text-overflow: ellipsis;
+}
+
+.singleItem img{
+    width: 200px;
+    max-width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+
+
+    border-radius: 5px;
+    margin:10px;
 }

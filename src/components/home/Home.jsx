@@ -12,9 +12,8 @@ function Home({items, setCart, cart}){
                     {items.map((el) => {
                         return(
                             <div key={el.id} className={styles.singleItem}>
-                                <h3>{el.title} </h3>
                                 <img src={el.image} alt="product image" />
-                                <p>Description: {el.description}</p>
+                                <h3>{el.title} </h3>
                                 <p>Price: {el.price}</p>
                                 <p>Rating: {el.rating.rate}</p>
                                 <button onClick={() => setCart([...cart, el])}>Add to cart</button>
