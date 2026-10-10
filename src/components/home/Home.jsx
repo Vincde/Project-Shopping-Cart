@@ -14,9 +14,11 @@ function Home({items, setCart, cart}){
                             <div key={el.id} className={styles.singleItem}>
                                 <img src={el.image} alt="product image" />
                                 <h3>{el.title} </h3>
-                                <p>Price: {el.price}</p>
-                                <p>Rating: {el.rating.rate}</p>
-                                <button onClick={() => setCart([...cart, el])}>Add to cart</button>
+                                <div className={styles.moreInfo}>
+                                    <p>Price: {el.price}</p>
+                                    <p>Rating: {el.rating.rate}</p>
+                                </div>
+                                <button onClick={() => setCart([...cart, el])} className={styles.addToCartBtn}>Add to cart</button>
                             </div>
                         )
                     })}

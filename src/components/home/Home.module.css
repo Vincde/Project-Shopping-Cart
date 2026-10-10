@@ -26,6 +26,7 @@
 }
 
 .singleItem{
+    font-size: 22px;
     border: 1px solid white;
     border-radius: 10px;
     text-align: center;
@@ -40,19 +41,33 @@
     box-shadow: 0px 0px 3px 3px whitesmoke;
 }
 
-
-.singleItem p{
-    overflow:hidden;
-    text-overflow: ellipsis;
+.moreInfo{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 10px;
 }
 
+
 .singleItem img{
-    width: 200px;
-    max-width: 100%;
+    max-width: 75%;
     aspect-ratio: 3/2;
     object-fit: cover;
-
-
     border-radius: 5px;
     margin:10px;
+}
+
+.addToCartBtn{
+    margin-bottom: 20px;
+    font-size: 18px;
+    border:1px solid gray;
+    border-radius: 10px;
+    padding:10px;
+    color:white;
+    background-color: rgb(32, 4, 4);
+}
+
+.addToCartBtn:hover{
+    transform: scale(1.05);
 }
