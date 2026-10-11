@@ -17,7 +17,6 @@ import Home from "../src/components/home/Home";
                 price: "3.15", 
                 rating: {rate: 4.5}}]} 
                 setCart={handleClick}
-                cart={[]}
                 ></Home>,
         }
     ];
