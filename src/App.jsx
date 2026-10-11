@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import NavBar from "./components/navBar/NavBar"
 import { useParams } from "react-router";
 import Home from "./components/home/Home"
@@ -38,9 +38,6 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
 
  return(
   <div>
