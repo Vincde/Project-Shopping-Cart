@@ -6,6 +6,7 @@ import "./App.css"
 import { useItemsFetching } from "./components/useItemsFetching";
 
 
+
 function App() {
   const { location } = useParams();
   /*
@@ -46,9 +47,11 @@ function App() {
       <p>Loading...</p>
     ) : error ? (
       <p>A network error was encountered</p>
-    ) : !loading && !error && location === "home" && (
+    ) : location === "home" ? (
       <Home items={items} setCart={handleAddItemToCart}></Home>
-    )
+    ) : location === "cart" ? (
+      <Cart cart={cart} setCart={setCart}></Cart>
+    ) : null
     }
     
   </div>
