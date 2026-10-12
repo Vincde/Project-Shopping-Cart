@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import Home from "./components/home/Home"
 import "./App.css"
 import { useItemsFetching } from "./components/useItemsFetching";
-
+import Cart from "./components/cart/Cart";
 
 
 function App() {
