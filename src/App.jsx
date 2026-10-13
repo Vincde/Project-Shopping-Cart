@@ -44,18 +44,18 @@ function App() {
   <div>
     <NavBar></NavBar>
     { loading ? (
-      <p>Loading...</p>
-    ) : error ? (
-      <p>A network error was encountered</p>
-    ) : location === "home" ? (
-      <Home items={items} handleAddItemToCart={handleAddItemToCart}></Home>
-    ) : location === "cart" ? (
-      <Cart cart={cart} handleChangeCart={setCart}></Cart>
-    ) : null
+        <p>Loading...</p>
+      ) : error ? (
+        <p>A network error was encountered</p>
+      ) : location === "home" ? (
+        <Home items={items} handleAddItemToCart={handleAddItemToCart}></Home>
+      ) : location === "cart" ? (
+        <Cart cart={cart} handleChangeCart={setCart}></Cart>
+      ) : null
     }
     
   </div>
- )
+  )
 }
 
 export default App
