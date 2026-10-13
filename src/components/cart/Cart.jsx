@@ -47,7 +47,7 @@ export default function Cart({cart, handleChangeCart}) {
                 </section>
 
             </div>
-            
+
         </div>
     )
 }
