@@ -48,9 +48,9 @@ function App() {
     ) : error ? (
       <p>A network error was encountered</p>
     ) : location === "home" ? (
-      <Home items={items} setCart={handleAddItemToCart}></Home>
+      <Home items={items} handleAddItemToCart={handleAddItemToCart}></Home>
     ) : location === "cart" ? (
-      <Cart cart={cart} setCart={setCart}></Cart>
+      <Cart cart={cart} handleChangeCart={setCart}></Cart>
     ) : null
     }
     

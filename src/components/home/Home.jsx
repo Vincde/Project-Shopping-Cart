@@ -1,6 +1,6 @@
 import styles from "./Home.module.css"
 
-function Home({items, setCart}){
+function Home({items, handleAddItemToCart}){
     return(
         <div className={styles.homeContainer}>
             <main>
@@ -18,7 +18,7 @@ function Home({items, setCart}){
                                     <p>Price: {el.price}</p>
                                     <p>Rating: {el.rating.rate}</p>
                                 </div>
-                                <button onClick={() => setCart(el)} className={styles.addToCartBtn}>Add to cart</button>
+                                <button onClick={() => handleAddItemToCart(el)} className={styles.addToCartBtn}>Add to cart</button>
                             </div>
                         )
                     })}

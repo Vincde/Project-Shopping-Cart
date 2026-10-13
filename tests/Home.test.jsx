@@ -16,7 +16,7 @@ import Home from "../src/components/home/Home";
                 image: "#", 
                 price: "3.15", 
                 rating: {rate: 4.5}}]} 
-                setCart={handleClick}
+                handleAddItemToCart={handleClick}
                 ></Home>,
         }
     ];

@@ -1,7 +1,7 @@
 import styles from "./Cart.module.css";
 
 
-export default function Cart({cart, setCart}) {
+export default function Cart({cart, handleChangeCart}) {
     return(
         <div className={styles.cart}> {/* non-existent class for now */}
             <div className={styles.cartTitles}>
