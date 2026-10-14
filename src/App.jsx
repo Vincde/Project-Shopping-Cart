@@ -39,6 +39,15 @@ function App() {
     }
   }
 
+  /*
+  function handleChangeCart(id, operation) {
+    let filteredCart;
+    switch(operation){
+      case "+":
+        filteredCart = cart.filter((item) => item.id === id);
+    }
+  }
+  */
 
  return(
   <div>
@@ -50,7 +59,7 @@ function App() {
       ) : location === "home" ? (
         <Home items={items} handleAddItemToCart={handleAddItemToCart}></Home>
       ) : location === "cart" ? (
-        <Cart cart={cart} handleChangeCart={setCart}></Cart>
+        <Cart cart={cart} handleChangeCart={handleChangeCart}></Cart>
       ) : null
     }
     
