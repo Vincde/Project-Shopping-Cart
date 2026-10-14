@@ -14,7 +14,7 @@ export default function Cart({cart, handleChangeCart}) {
 
             <div className={styles.mainContent}>
                 <section>
-                    {cart.length > 0 ? (cart.map((el, index) => {
+                    {cart.length > 0 ? (cart.toReversed().map((el, index) => {
                         const imageDescr = "product n." + index;
                         return(
                             <div key={el.id} className={styles.cartElement}>

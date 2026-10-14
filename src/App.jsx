@@ -32,22 +32,22 @@ function App() {
       const unFilteredCart = cart.filter(
         (oldItem) => oldItem.id !== newItem.id
       );
-
-      const finalItem = structuredClone(newItem);
-      finalItem.numberOfPieces = filteredCart[0].numberOfPieces + 1;
-      setCart([...unFilteredCart, finalItem]);
+      filteredCart[0].numberOfPieces += 1;
+      unFilteredCart.push(filteredCart[0]);
+      setCart([...unFilteredCart]);
     }
   }
 
-  /*
+  
   function handleChangeCart(id, operation) {
-    let filteredCart;
-    switch(operation){
-      case "+":
-        filteredCart = cart.filter((item) => item.id === id);
-    }
+    return null;
+    // let filteredCart;
+    // switch(operation){
+    //   case "+":
+    //     filteredCart = cart.filter((item) => item.id === id);
+    // }
   }
-  */
+
 
  return(
   <div>
