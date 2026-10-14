@@ -41,20 +41,34 @@ function App() {
   
   function handleChangeCart(id, operation, index) {
     const filteredCart = cart.filter((item) => item.id === id);
-
+    let newArray = [...cart];
+    let cartWithDeletedItem;
 
     switch(operation){
       case "+":
         filteredCart[0].numberOfPieces += 1;
-        const newCart = cart.splice(index, 1, filteredCart[0]);
-        setCart([...newCart]);
+        newArray.splice(index - 1, 1, filteredCart[0]);
+        setCart([...newArray]);
         break;
       case "-":
+        if(filteredCart[0].numberOfPieces <= 1){
+          cartWithDeletedItem = cart.filter(
+          (cartItem) => cartItem.id !== id
+          );
+          setCart([...cartWithDeletedItem]);
+          break;
+        }else{
+          filteredCart[0].numberOfPieces -= 1;
+          newArray.splice(index, 1, filteredCart[0]);
+          setCart([...newArray]);
+          break;
+        }
+      case "x":
+        cartWithDeletedItem = cart.filter(
+          (cartItem) => cartItem.id !== id
+          );
+        setCart([...cartWithDeletedItem]);
         break;
-      case "X":
-        break;
-      
-
     }
   }
 
