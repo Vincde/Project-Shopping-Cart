@@ -39,13 +39,23 @@ function App() {
   }
 
   
-  function handleChangeCart(id, operation) {
-    return null;
-    // let filteredCart;
-    // switch(operation){
-    //   case "+":
-    //     filteredCart = cart.filter((item) => item.id === id);
-    // }
+  function handleChangeCart(id, operation, index) {
+    const filteredCart = cart.filter((item) => item.id === id);
+
+
+    switch(operation){
+      case "+":
+        filteredCart[0].numberOfPieces += 1;
+        const newCart = cart.splice(index, 1, filteredCart[0]);
+        setCart([...newCart]);
+        break;
+      case "-":
+        break;
+      case "X":
+        break;
+      
+
+    }
   }
 
 
