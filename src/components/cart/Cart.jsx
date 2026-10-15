@@ -2,7 +2,7 @@ import styles from "./Cart.module.css";
 
 
 export default function Cart({cart, handleChangeCart}) {
-
+    console.log(cart);
     const price = cart.reduce((total, el) => total + el.price, 0);
 
     return(

@@ -41,32 +41,36 @@ function App() {
   
   function handleChangeCart(id, operation, index) {
     const filteredCart = cart.filter((item) => item.id === id);
-    let newArray = [...cart];
+    let newArray = cart.toReversed();
     let cartWithDeletedItem;
 
     switch(operation){
       case "+":
         filteredCart[0].numberOfPieces += 1;
-        newArray.splice(index - 1, 1, filteredCart[0]);
+        newArray.splice(index, 1, filteredCart[0]);
+        newArray = newArray.toReversed();
         setCart([...newArray]);
         break;
       case "-":
         if(filteredCart[0].numberOfPieces <= 1){
-          cartWithDeletedItem = cart.filter(
+          cartWithDeletedItem = newArray.filter(
           (cartItem) => cartItem.id !== id
           );
+          cartWithDeletedItem = cartWithDeletedItem.toReversed();
           setCart([...cartWithDeletedItem]);
           break;
         }else{
           filteredCart[0].numberOfPieces -= 1;
           newArray.splice(index, 1, filteredCart[0]);
+          newArray = newArray.toReversed();
           setCart([...newArray]);
           break;
         }
       case "x":
-        cartWithDeletedItem = cart.filter(
+        cartWithDeletedItem = newArray.filter(
           (cartItem) => cartItem.id !== id
           );
+          cartWithDeletedItem = cartWithDeletedItem.toReversed();
         setCart([...cartWithDeletedItem]);
         break;
     }
