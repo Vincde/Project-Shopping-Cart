@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import styles from "./Cart.module.css";
 
 
@@ -43,7 +44,7 @@ export default function Cart({cart, handleChangeCart}) {
 
                 <section className={styles.recap}>
                     <h3>Total price: €{price}</h3>
-                    <button>Checkout</button>
+                    <button><Link to="/checkout" state={{cart: [...cart]}}>Checkout</Link></button>
                 </section>
 
             </div>
