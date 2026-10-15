@@ -2,8 +2,7 @@ import styles from "./Cart.module.css";
 
 
 export default function Cart({cart, handleChangeCart}) {
-    console.log(cart);
-    const price = cart.reduce((total, el) => total + el.price, 0);
+    const price = cart.reduce((total, el) => total + el.price*el.numberOfPieces, 0);
 
     return(
         <div>
@@ -43,7 +42,7 @@ export default function Cart({cart, handleChangeCart}) {
                 </section>
 
                 <section className={styles.recap}>
-                    <h3>Total price: {price}</h3>
+                    <h3>Total price: €{price}</h3>
                     <button>Checkout</button>
                 </section>
 
