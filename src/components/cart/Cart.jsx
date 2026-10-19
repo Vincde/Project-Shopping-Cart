@@ -6,14 +6,14 @@ export default function Cart({cart, handleChangeCart}) {
     const price = cart.reduce((total, el) => total + el.price*el.numberOfPieces, 0);
 
     return(
-        <div>
+        <div className={styles.cartContainer}>
             <div className={styles.cartTitles}>
                 <h2>Cart</h2>
                 <h2>Recap</h2>
             </div>
 
             <div className={styles.mainContent}>
-                <section>
+                <section className={styles.cartSection}>
                     {cart.length > 0 ? (cart.toReversed().map((el, index) => {
                         const imageDescr = "product n." + index;
                         return(
