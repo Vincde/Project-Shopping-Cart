@@ -37,11 +37,11 @@
 
 .cartElement button{
     color: white;
-    display:block;
-    width: 50%;
+    width: 25px;
     margin: 10px auto;
     border-radius: 5px;
     background-color: rgb(46, 46, 207);
+    margin-right: 10px;
 }
 
 .cartElementDescription{
@@ -52,6 +52,10 @@
     display:flex;
     gap: 10px;
     margin: 10px 0;
+}
+
+.cartElementQuantity{
+    margin:auto 0;
 }
 
 
