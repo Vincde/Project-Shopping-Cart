@@ -23,13 +23,17 @@ export default function Cart({cart, handleChangeCart}) {
                                 </div>
 
                                 <div>
-                                    <h2>{el.title}</h2>
-                                    <p>Category: {el.category}</p>
-                                    <p>Description: {el.description}</p>
-                                    <p>Price: {el.price}</p>
-                                    <p>Rating: {el.rating.rate}</p>
+                                    <h2 className={styles.cartElementTitle}>{el.title}</h2>
+                                    <div className={styles.cartElementDescription}>
+                                        <p>Category: {el.category}</p>
+                                        <p>Description: {el.description}</p>
+                                    </div>
+                                    <div className={styles.cartElementPrice}>
+                                        <p>Price: {el.price}</p>
+                                        <p>Rating: {el.rating.rate}</p>
+                                    </div>
                                 </div>
-                                <div>
+                                <div className={styles.cartElementQuantity}>
                                     <p>Quantity: {el.numberOfPieces}</p>
                                     <button onClick={() => handleChangeCart(el.id, "+", index)}>+</button>
                                     <button onClick={() => handleChangeCart(el.id, "-", index)}>-</button>

@@ -25,6 +25,36 @@
     margin-top: 30px;
 }
 
+.cartSection{
+    margin-left: 50px;
+}
+
+.cartElement{
+    display:flex;
+    margin-top:40px;
+    gap:20px;
+}
+
+.cartElement button{
+    color: white;
+    display:block;
+    width: 50%;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: rgb(46, 46, 207);
+}
+
+.cartElementDescription{
+    margin-top: 10px;
+}
+
+.cartElementPrice{
+    display:flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+
 .recap{
     padding: 10px;
     box-shadow: 2px 2px 5px 2px white; 
