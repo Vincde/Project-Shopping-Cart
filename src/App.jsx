@@ -5,6 +5,7 @@ import Home from "./components/home/Home"
 import "./App.css"
 import { useItemsFetching } from "./components/useItemsFetching";
 import Cart from "./components/cart/Cart";
+import Checkout from "./components/checkout/Checkout";
 
 
 function App() {
@@ -85,9 +86,11 @@ function App() {
       ) : error ? (
         <p>A network error was encountered</p>
       ) : location === "home" ? (
-        <Home items={items} handleAddItemToCart={handleAddItemToCart}></Home>
+        <Home items={ items } handleAddItemToCart={handleAddItemToCart}></Home>
       ) : location === "cart" ? (
-        <Cart cart={cart} handleChangeCart={handleChangeCart}></Cart>
+        <Cart cart={ cart } handleChangeCart={handleChangeCart}></Cart>
+      ) : location === "checkout" ? (
+        <Checkout cart={ cart } ></Checkout>
       ) : null
     }
     

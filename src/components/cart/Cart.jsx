@@ -48,7 +48,7 @@ export default function Cart({cart, handleChangeCart}) {
 
                 <section className={styles.recap}>
                     <h3>Total price: €{price}</h3>
-                    <button><Link to="/checkout" state={{cart: [...cart]}}>Checkout</Link></button>
+                    <button><Link to="/checkout">Checkout</Link></button>
                 </section>
 
             </div>
