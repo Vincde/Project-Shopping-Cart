@@ -90,7 +90,7 @@ function App() {
       ) : location === "cart" ? (
         <Cart cart={ cart } handleChangeCart={handleChangeCart}></Cart>
       ) : location === "checkout" ? (
-        <Checkout cart={ cart } ></Checkout>
+        <Checkout cart={ cart } setCart={setCart} ></Checkout>
       ) : null
     }
     
