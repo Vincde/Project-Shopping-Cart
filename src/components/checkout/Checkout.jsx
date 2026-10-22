@@ -14,32 +14,44 @@ export default function Checkout({ cart, setCart }){
         <div className={styles.checkoutPage}>
             {payment === false ? (
             <>
-                <h1>Checkout</h1>
-                <section>
+                <h1 className={styles.checkoutTitle}>Checkout</h1>
+                <section className={styles.personalSection}>
                     <h2>Personal Details</h2>
-                    <label htmlFor="name">Name and Surname: </label>
-                    <input type="text" id="name" />
+                    <div>
+                        <label htmlFor="name">Name and Surname: </label>
+                        <input type="text" id="name" />
+                    </div>
                 
-                    <label htmlFor="address">Address: </label>
-                    <input type="text" id="address" />
+                    <div>
+                        <label htmlFor="address">Address: </label>
+                        <input type="text" id="address" />
+                    </div>
                 </section>
-                <section>
+                <section className={styles.paymentSection}>
                     <h2>Payment method</h2>
                 
-                    <label htmlFor="cardNumber">Card number: </label>
-                    <input type="number" id="cardNumber" />
+                    <div>
+                        <label htmlFor="cardNumber">Card number: </label>
+                        <input type="number" id="cardNumber" />
+                    </div>
 
-                    <label htmlFor="card_owner">Card owner: </label>
-                    <input type="text" id="card_owner" />
+                    <div>
+                        <label htmlFor="card_owner">Card owner: </label>
+                        <input type="text" id="card_owner" />
+                    </div>
 
-                    <label htmlFor="card_psw">CVV: </label>
-                    <input type="number" id="card_psw" />
+                    <div>
+                        <label htmlFor="card_psw">CVV: </label>
+                        <input type="number" id="card_psw" />
+                    </div>
 
-                    <label htmlFor="card_expiration">Card expiration date: </label>
-                    <input type="date" id="card_expiration" />
+                    <div>
+                        <label htmlFor="card_expiration">Card expiration date: </label>
+                        <input type="date" id="card_expiration" />
+                    </div>
                 </section>
-                <section>
-                    <button onClick={handlePayment}>Pay</button>
+                <section className={styles.sendPaymentSection}>
+                    <button onClick={handlePayment} className={styles.paymentButton}>Pay</button>
                 </section>
             </>
             ) : (

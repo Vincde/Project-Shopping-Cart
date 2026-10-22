@@ -1,0 +1,52 @@
+.checkoutPage{
+    background-color: var(--bcg_color_child);
+    margin: 30px 150px;
+}
+
+.checkoutTitle{
+    text-align: center;
+}
+
+section{
+    margin: 30px;
+}
+
+.personalSection > div, .paymentSection > div, .sendPaymentSection > div{
+    display:flex;
+    justify-content: space-between;
+    max-width: 50%;
+    margin:10px;
+    border:2px solid rgba(128, 128, 128, 0.644);
+    padding:10px;
+    border-radius: 10px;
+}
+
+.personalSection input, .paymentSection input, .sendPaymentSection input{
+    border:1px solid gray;
+    border-radius: 10px;
+}
+
+
+.paymentButton{
+    margin: 40px 10px;
+    border:2px solid gray;
+    border-radius: 10px;
+    width: 80px;
+    height: 30px;
+    /* background-color: rgba(112, 73, 73, 0.5); */
+    background: linear-gradient(90deg, rgb(78, 78, 102), rgb(73, 34, 73));
+    color: var(--primary_font);
+    transition: 0.3s ease;
+}
+
+
+.paymentButton:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.2);
+}
+
+p{
+    border:2px solid gray;
+    padding: 20px;
+    font-size: 18px;
+}
