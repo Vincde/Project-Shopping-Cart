@@ -7,7 +7,7 @@
     text-align: center;
 }
 
-section{
+.checkoutPage section{
     margin: 30px;
 }
 
@@ -45,8 +45,12 @@ section{
   filter: brightness(1.2);
 }
 
-p{
+.paymentRedirect{
     border:2px solid gray;
     padding: 20px;
     font-size: 18px;
+}
+
+.paymentRedirect p, .paymentRedirect a{
+    margin: 10px;
 }

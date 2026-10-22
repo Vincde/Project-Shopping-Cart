@@ -1,20 +1,48 @@
 import { useState } from "react";
 import styles from "./Checkout.module.css";
+import { useNavigate } from "react-router";
+import { useEffect } from "react";
+import { Link } from "react-router";
 
 export default function Checkout({ cart, setCart }){
     const [payment, setPayment] = useState(false);
+    const navigate = useNavigate();
 
+    const [countdown, setCountdown] = useState(null);
+
+    useEffect(() => {
+        if(countdown === null) return;
+
+        if(countdown === 0) {
+            navigate("/home");
+            return;
+        }
+
+        const timerId = setTimeout(() => {
+            setCountdown((prev) => prev - 1);
+        }, 1000);
+
+        return () => {
+            clearTimeout(timerId);
+        };
+    }, [countdown, navigate]);
+    
     function handlePayment(){
         setPayment(true);
         setCart([]);
+        setCountdown(3);
     }
-
+    
+    
 
     return(
         <div className={styles.checkoutPage}>
             {payment === false ? (
             <>
                 <h1 className={styles.checkoutTitle}>Checkout</h1>
+                <section className={styles.repilogue}>
+
+                </section>
                 <section className={styles.personalSection}>
                     <h2>Personal Details</h2>
                     <div>
@@ -55,7 +83,11 @@ export default function Checkout({ cart, setCart }){
                 </section>
             </>
             ) : (
+                <div className={styles.paymentRedirect}>
                 <p>Payment done!</p>
+                <p>You will be redirected to the home page in {countdown}...</p>
+                <Link to="/home">Or you can click here!</Link>
+                </div>
             )}
             
         </div>
