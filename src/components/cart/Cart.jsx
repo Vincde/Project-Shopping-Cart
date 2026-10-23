@@ -5,6 +5,7 @@ import styles from "./Cart.module.css";
 export default function Cart({cart, handleChangeCart}) {
     const price = cart.reduce((total, el) => total + el.price*el.numberOfPieces, 0);
 
+
     return(
         <div className={styles.cartContainer}>
             <div className={styles.cartTitles}>
@@ -45,11 +46,14 @@ export default function Cart({cart, handleChangeCart}) {
                         <p>You have no elements in the cart!</p>
                     )}
                 </section>
-
+                
+                {cart.length > 0 ? (
                 <section className={styles.recap}>
                     <h3>Total price: €{price}</h3>
                     <button><Link to="/checkout">Checkout</Link></button>
                 </section>
+                ) : null}
+                
 
             </div>
 

@@ -40,8 +40,15 @@ export default function Checkout({ cart, setCart }){
             {payment === false ? (
             <>
                 <h1 className={styles.checkoutTitle}>Checkout</h1>
-                <section className={styles.repilogue}>
-
+                <section className={styles.summary}>
+                    {cart.map((el) => {
+                        return(
+                        <div key={el.id}>
+                            <img src={el.image} alt="cartElement" />
+                            <p>{el.title}</p>
+                        </div>
+                        )
+                    })}
                 </section>
                 <section className={styles.personalSection}>
                     <h2>Personal Details</h2>
