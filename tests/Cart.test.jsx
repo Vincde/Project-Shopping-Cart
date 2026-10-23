@@ -13,27 +13,33 @@ import { createMemoryRouter, RouterProvider } from "react-router";
         useItemsFetching: mockFetch.useItemsFetching,
     }));
 
+
+
+
+
+
     describe("Cart component", () => {
 
-    const router = createMemoryRouter(routes, {initialEntries:["/home"]});
-    
-    it("Clicking on the plus, minus, cancel buttons changes data correctly",async () => {
         mockFetch.useItemsFetching.mockReturnValue({
-            items: [{id: 1,
-                title: "hello", 
-                description: "aaa", 
-                image: "#", 
-                price: "3.15", 
-                rating: {rate: 4.5}}],
-            error: false,
-            loading: false,
-            })
-
+                items: [{id: 1,
+                    title: "hello", 
+                    description: "aaa", 
+                    image: "#", 
+                    price: "3.15", 
+                    rating: {rate: 4.5}}],
+                error: false,
+                loading: false,
+        })
+    
+        it("Clicking on the plus, minus, cancel buttons changes data correctly",async () => {
+            const router = createMemoryRouter(routes, {initialEntries:["/home"]});
 
             render(<RouterProvider router={router}></RouterProvider>);
             const usr = userEvent.setup();
 
             await usr.click(screen.getByRole("button", {name: /Add to cart/i}));
+            // WARNING: THIS COULD GIVE ERRORS IF THE ELEMENTS ARE MORE THAN 2
+            // getByRole could return error if more than one element is found
             await usr.click(screen.getByAltText("cart"));
 
             expect(screen.getByRole("heading", {name: /hello/i}).textContent).toMatch("hello");
@@ -54,8 +60,20 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
         });
 
+        it("Clicking on the checkout button links into the checkout page", async () => {
+        
+            const router = createMemoryRouter(routes, {initialEntries:["/home"]});
+            render(<RouterProvider router={router}></RouterProvider>);
+            const usr = userEvent.setup();
+
+            await usr.click(screen.getByRole("button", {name: /Add to cart/i}));
+            await usr.click(screen.getByAltText("cart"));
+            await usr.click(screen.getByRole("link", {name: /checkout/i}));
+            expect(screen.getByRole("heading", {name: /checkout/i})).toBeInTheDocument();
+        })
+
     
-    });
+});
 
  
 
