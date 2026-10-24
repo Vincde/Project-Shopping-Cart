@@ -91,3 +91,8 @@
     color: white;
     text-decoration:none;
 }
+
+.cartElementImgCheckbox{
+    display:flex;
+    gap: 10px;
+}
