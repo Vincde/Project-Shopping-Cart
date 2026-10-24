@@ -28,6 +28,7 @@ function App() {
     if(filteredCart.length === 0){
       const finalItem = structuredClone(newItem);
       finalItem.numberOfPieces = 1;
+      finalItem.checkedInput = true;
       setCart(prev => [...prev, finalItem]);
     }else{
       const unFilteredCart = cart.filter(
@@ -77,6 +78,22 @@ function App() {
     }
   }
 
+  function changeCheck(id) {
+    const tempCart = cart.map((el) => {
+      if(el.id === id){
+        return(
+          {
+            ...el,
+            checkedInput: !el.checkedInput,
+          }
+        )
+      }
+      return el;
+    })
+
+    setCart([...tempCart]);
+  }
+
 
  return(
   <div>
@@ -88,7 +105,7 @@ function App() {
       ) : location === "home" ? (
         <Home items={ items } handleAddItemToCart={handleAddItemToCart}></Home>
       ) : location === "cart" ? (
-        <Cart cart={ cart } handleChangeCart={handleChangeCart}></Cart>
+        <Cart cart={ cart } handleChangeCart={handleChangeCart} changeCheck={changeCheck}></Cart>
       ) : location === "checkout" ? (
         <Checkout cart={ cart } setCart={setCart} ></Checkout>
       ) : null

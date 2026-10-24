@@ -2,8 +2,14 @@ import { Link } from "react-router";
 import styles from "./Cart.module.css";
 
 
-export default function Cart({cart, handleChangeCart}) {
-    let price = cart.reduce((total, el) => total + el.price*el.numberOfPieces, 0);
+export default function Cart({cart, handleChangeCart, changeCheck}) {
+    let price = cart.reduce((total, el) => {
+        if(el.checkedInput === true){
+            return total + el.price*el.numberOfPieces;
+        }else{
+            return total;
+        }
+    }, 0);
     price = price.toFixed(2);    
 
     return(
@@ -20,6 +26,7 @@ export default function Cart({cart, handleChangeCart}) {
                         return(
                             <div key={el.id} className={styles.cartElement}>
                                 <div>
+                                    <input type="checkbox" checked={el.checkedInput} onChange={() => changeCheck(el.id)} />
                                     <img src={el.image} alt={imageDescr} />
                                 </div>
 

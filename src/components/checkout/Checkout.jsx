@@ -42,12 +42,17 @@ export default function Checkout({ cart, setCart }){
                 <h1 className={styles.checkoutTitle}>Checkout</h1>
                 <section className={styles.summary}>
                     {cart.map((el) => {
-                        return(
-                        <div key={el.id}>
-                            <img src={el.image} alt="cartElement" />
-                            <p>{el.title}</p>
-                        </div>
-                        )
+                        if(el.checkedInput === true){
+                            return(
+                                <div key={el.id}>
+                                    <img src={el.image} alt="cartElement" />
+                                    <p>{el.title}</p>
+                                </div>
+                            )
+                        }else{
+                            return null;
+                        }
+                        
                     })}
                 </section>
                 <section className={styles.personalSection}>
