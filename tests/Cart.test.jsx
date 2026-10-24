@@ -72,6 +72,22 @@ import { createMemoryRouter, RouterProvider } from "react-router";
             expect(screen.getByRole("heading", {name: /checkout/i})).toBeInTheDocument();
         })
 
+        it("Clicking on the checkbox does change the checked state", async () => {
+            const router = createMemoryRouter(routes, {initialEntries:["/home"]});
+            render(<RouterProvider router={router}></RouterProvider>);
+            const usr = userEvent.setup();
+
+            await usr.click(screen.getByRole("button", {name: /Add to cart/i}));
+            await usr.click(screen.getByAltText("cart"));
+
+            const checkbox = screen.getByRole('checkbox');
+
+            expect(checkbox).toBeChecked();
+            await usr.click(checkbox);
+            expect(checkbox).not.toBeChecked();
+
+        });
+
     
 });
 
