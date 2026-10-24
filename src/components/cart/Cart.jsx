@@ -3,8 +3,8 @@ import styles from "./Cart.module.css";
 
 
 export default function Cart({cart, handleChangeCart}) {
-    const price = cart.reduce((total, el) => total + el.price*el.numberOfPieces, 0);
-
+    let price = cart.reduce((total, el) => total + el.price*el.numberOfPieces, 0);
+    price = price.toFixed(2);    
 
     return(
         <div className={styles.cartContainer}>
