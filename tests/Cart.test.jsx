@@ -83,8 +83,10 @@ import { createMemoryRouter, RouterProvider } from "react-router";
             const checkbox = screen.getByRole('checkbox');
 
             expect(checkbox).toBeChecked();
+            expect(screen.getByRole("heading", {level: 3}).textContent).toBe("Total price: €3.15");
             await usr.click(checkbox);
             expect(checkbox).not.toBeChecked();
+            expect(screen.getByRole("heading", {level: 3}).textContent).toBe("Total price: €0.00");
 
         });
 
