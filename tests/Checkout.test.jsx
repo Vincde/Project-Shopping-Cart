@@ -73,7 +73,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
             }
 
             await usr.click(screen.getByRole("button", {name: "Pay"}));
-            expect(screen.getByRole("paragraph", {name: "Payment done!"})).toBeInTheDocument();
+            expect(screen.getByText("Payment done!")).toBeInTheDocument();
             await usr.click(screen.getByRole("link", {name: /Or you can click here!/i}));
             expect(screen.getByRole("heading", {name: /Hello, welcome to our shop!/i})).toBeInTheDocument();
         });
