@@ -1,0 +1,59 @@
+import { it, describe, expect, vi } from "vitest";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import routes from "../src/routes";
+import { createMemoryRouter, RouterProvider } from "react-router";
+
+
+    const mockFetch = vi.hoisted(() => ({
+        useItemsFetching: vi.fn(),
+    }))
+
+  vi.mock('./../src/components/useItemsFetching', () => ({
+        useItemsFetching: mockFetch.useItemsFetching,
+    }));
+
+
+
+
+
+
+    describe("Checkout", () => {
+
+        mockFetch.useItemsFetching.mockReturnValue({
+                items: [{id: 1,
+                    title: "hello", 
+                    description: "aaa", 
+                    image: "#", 
+                    price: "3.15", 
+                    rating: {rate: 4.5}}],
+                error: false,
+                loading: false,
+        })
+    
+        it("With at least one input not filled the pay button doesn't work",async () => {
+            const router = createMemoryRouter(routes, {initialEntries:["/home"]});
+
+            render(<RouterProvider router={router}></RouterProvider>);
+            const usr = userEvent.setup();
+
+            await usr.click(screen.getByRole("button", {name: /Add to cart/i}));
+            // WARNING: THIS COULD GIVE ERRORS IF THE ELEMENTS ARE MORE THAN 2
+            // getByRole could return error if more than one element is found
+            await usr.click(screen.getByAltText("cart"));
+            await usr.click(screen.getByRole("link", {name: "Checkout"}));
+
+            await usr.click(screen.getByRole("button", {name: "Pay"}));
+            expect(screen.queryByRole("paragraph", {name: "Payment done!"})).not.toBeInTheDocument();
+
+        });
+
+        
+
+        
+
+    
+});
+
+ 
+
