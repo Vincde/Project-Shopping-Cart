@@ -48,6 +48,36 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
         });
 
+        it("All the inputs filled -> page shows the finalized payment, then goes back to home", async () => {
+            const router = createMemoryRouter(routes, {initialEntries:["/home"]});
+            render(<RouterProvider router={router}></RouterProvider>);
+            const usr = userEvent.setup();
+
+            await usr.click(screen.getByRole("button", {name: /Add to cart/i}));
+            // WARNING: THIS COULD GIVE ERRORS IF THE ELEMENTS ARE MORE THAN 2
+            // getByRole could return error if more than one element is found
+            await usr.click(screen.getByAltText("cart"));
+            await usr.click(screen.getByRole("link", {name: "Checkout"}));
+
+            const fields = [
+              ["Name and Surname:", "John Carmack"],
+              ["Address:", "Via Roma 23"],
+              ["Card number:", "12347638273"],
+              ["Card owner:", "John Carmack"],
+              ["CVV:", "345"],
+              ["Card expiration date:", "2026-10-25"],
+            ];
+
+            for (const [label, value] of fields) {
+              await usr.type(screen.getByLabelText(label), value);
+            }
+
+            await usr.click(screen.getByRole("button", {name: "Pay"}));
+            expect(screen.getByRole("paragraph", {name: "Payment done!"})).toBeInTheDocument();
+            await usr.click(screen.getByRole("link", {name: /Or you can click here!/i}));
+            expect(screen.getByRole("heading", {name: /Hello, welcome to our shop!/i})).toBeInTheDocument();
+        });
+
         
 
         
