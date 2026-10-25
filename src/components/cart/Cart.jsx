@@ -10,7 +10,10 @@ export default function Cart({cart, handleChangeCart, changeCheck}) {
             return total;
         }
     }, 0);
-    price = price.toFixed(2);    
+    price = price.toFixed(2);
+    let atLeastOneChecked;
+    atLeastOneChecked = cart.find((el) => el.checkedInput === true); 
+    if(atLeastOneChecked) atLeastOneChecked = true;   
 
     return(
         <div className={styles.cartContainer}>
@@ -54,12 +57,12 @@ export default function Cart({cart, handleChangeCart, changeCheck}) {
                     )}
                 </section>
                 
-                {cart.length > 0 ? (
+                {cart.length > 0 && atLeastOneChecked && (
                 <section className={styles.recap}>
                     <h3>Total price: €{price}</h3>
                     <button><Link to="/checkout">Checkout</Link></button>
                 </section>
-                ) : null}
+                )}
                 
 
             </div>
