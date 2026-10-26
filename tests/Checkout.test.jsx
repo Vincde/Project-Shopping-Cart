@@ -1,5 +1,5 @@
 import { it, describe, expect, vi } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import routes from "../src/routes";
 import { createMemoryRouter, RouterProvider } from "react-router";
@@ -78,6 +78,34 @@ import { createMemoryRouter, RouterProvider } from "react-router";
             expect(screen.getByRole("heading", {name: /Hello, welcome to our shop!/i})).toBeInTheDocument();
         });
 
+        it("All the inputs filled -> page shows the finalized payment, automatically goes back home", async () => {
+            const router = createMemoryRouter(routes, {initialEntries:["/home"]});
+            render(<RouterProvider router={router}></RouterProvider>);
+            const usr = userEvent.setup();
+
+            await usr.click(screen.getByRole("button", {name: /Add to cart/i}));
+            // WARNING: THIS COULD GIVE ERRORS IF THE ELEMENTS ARE MORE THAN 2
+            // getByRole could return error if more than one element is found
+            await usr.click(screen.getByAltText("cart"));
+            await usr.click(screen.getByRole("link", {name: "Checkout"}));
+
+            const fields = [
+              ["Name and Surname:", "John Carmack"],
+              ["Address:", "Via Roma 23"],
+              ["Card number:", "12347638273"],
+              ["Card owner:", "John Carmack"],
+              ["CVV:", "345"],
+              ["Card expiration date:", "2026-10-25"],
+            ];
+
+            for (const [label, value] of fields) {
+              await usr.type(screen.getByLabelText(label), value);
+            }
+
+            await usr.click(screen.getByRole("button", {name: "Pay"}));
+            expect(screen.getByText("Payment done!")).toBeInTheDocument();
+            await waitFor(() => expect(screen.getByRole("heading", {name: /Hello, welcome to our shop!/i})).toBeInTheDocument(), {timeout: 5000});
+        });
         
 
         
