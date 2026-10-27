@@ -6,7 +6,7 @@ import { useItemsFetching } from "./components/useItemsFetching";
 import Cart from "./components/cart/Cart";
 import Checkout from "./components/checkout/Checkout";
 import useCart from "./components/useCart";
-
+import Shop from "./components/shop/Shop";
 
 function App() {
   const { location } = useParams();
@@ -33,6 +33,8 @@ function App() {
         <Cart cart={ cart } handleChangeCart={handleChangeCart} changeCheck={changeCheck}></Cart>
       ) : location === "checkout" ? (
         <Checkout cart={ cart } setCart={setCart} ></Checkout>
+      ) : location === "shop" ? (
+        <Shop cart={cart} handleAddItemToCart={handleAddItemToCart}></Shop>
       ) : null
     }
     
