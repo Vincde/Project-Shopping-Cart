@@ -34,7 +34,7 @@ function App() {
       ) : location === "checkout" ? (
         <Checkout cart={ cart } setCart={setCart} ></Checkout>
       ) : location === "shop" ? (
-        <Shop cart={cart} handleAddItemToCart={handleAddItemToCart}></Shop>
+        <Shop items={ items } handleAddItemToCart={handleAddItemToCart}></Shop>
       ) : null
     }
     
