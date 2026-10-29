@@ -55,7 +55,10 @@ export default function Checkout({ cart, setCart }){
                         
                     })}
                 </section>
-                <form onSubmit={handlePayment}>
+                <form onSubmit={(e) => {
+                    e.preventDefault();
+                    handlePayment();
+                }}>
                     <section className={styles.personalSection}>
                         <h2>Personal Details</h2>
                         <div>
@@ -64,7 +67,7 @@ export default function Checkout({ cart, setCart }){
                         </div>
                 
                         <div>
-                            <label htmlFor="address">Address: </label>
+                            <label htmlFor="address">Home Address: </label>
                             <input type="text" id="address" required={true} />
                         </div>
                     </section>
