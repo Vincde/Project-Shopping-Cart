@@ -3,7 +3,6 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import routes from "../src/routes";
 import { createMemoryRouter, RouterProvider } from "react-router";
-import { use } from "react";
 
 
     const mockFetch = vi.hoisted(() => ({
@@ -60,6 +59,23 @@ import { use } from "react";
             expect(screen.getByText("aaa")).toBeInTheDocument();
             await usr.click(screen.getByText("X"));
             expect(screen.getByText("Title: hello")).toBeInTheDocument();
+
+        });
+
+        it("Click on one item -> open the details page -> click 'add to cart' button -> adds item to cart",async () => {
+            const router = createMemoryRouter(routes, {initialEntries:["/home"]});
+
+            render(<RouterProvider router={router}></RouterProvider>);
+            const usr = userEvent.setup();
+
+            await usr.click(screen.getByAltText("shop"));
+
+            await usr.click(screen.getByText("Title: hello"));
+            await usr.click(screen.getByText("Add to Cart"));
+            await usr.click(screen.getByText("Add to Cart"));
+            await usr.click(screen.getByAltText("cart"));
+            expect(screen.getByRole("heading", {name: "hello"})).toBeInTheDocument();
+            expect(screen.getByText("Quantity: 2")).toBeInTheDocument();
 
         });
         
