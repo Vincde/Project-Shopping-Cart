@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import styles from './shop.module.css';
+import styles from './shop.module.css';
 
 export default function Shop({items, handleAddItemToCart}){
     const [selectedItem, setSelectedItem] = useState(null);
@@ -25,14 +25,16 @@ export default function Shop({items, handleAddItemToCart}){
             ) 
             : 
             (
-            <div>
-            <h1>Shop</h1>
-            <div>
+            <div className={styles.shopContainer}>
+            <h1 className={styles.title}>Shop</h1>
+            <div className={styles.itemsList}>
                 {items.map((el) => {
                     return(
-                        <div key={el.id} onClick={() => setSelectedItem(el.id)}>
-                            <img src={el.image} alt={`image n. ${el.id}`} />
-                            <p>Title: {el.title}</p>
+                        <div key={el.id} onClick={() => setSelectedItem(el.id)} className={styles.singleItem}>
+                            <div className={styles.singleItemBorder}>
+                                <img src={el.image} alt={`image n. ${el.id}`} />
+                                <p>Title: {el.title}</p>
+                            </div>
                         </div>
                     )
                 })}

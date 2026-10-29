@@ -1,0 +1,36 @@
+.shopContainer{
+    background-color: var(--bcg_color_child);
+    margin: var(--margin_base);
+    border:2px solid var(--border_color);
+    color: var(--primary_font);
+    margin-top: 50px;
+}
+
+
+.title{
+    text-align: center;
+}
+
+.itemsList{
+    display:grid;
+    border:2px solid red;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.singleItem img{
+    display:block;
+    margin: 0 auto 10px auto;
+    border:1px solid gray;
+    border-bottom: none;
+}
+
+.singleItem p{ 
+    text-align: center;
+    border:1px solid gray;
+    border-top: none;
+}
+
+.singleItem{
+    margin-top: 25px;
+}
