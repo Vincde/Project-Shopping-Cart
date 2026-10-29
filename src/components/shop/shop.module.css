@@ -18,19 +18,16 @@
     grid-template-rows: 1fr 1fr 1fr;
 }
 
-.singleItem img{
-    display:block;
-    margin: 0 auto 10px auto;
-    border:1px solid gray;
-    border-bottom: none;
-}
-
-.singleItem p{ 
-    text-align: center;
-    border:1px solid gray;
-    border-top: none;
-}
-
 .singleItem{
-    margin-top: 25px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.singleItemBorder{
+    border:2px solid gray;
+    border-radius: 10px;
+    padding:20px;
+    margin-top: 20px;
+    text-align: center;
 }
