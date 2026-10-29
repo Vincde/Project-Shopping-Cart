@@ -31,7 +31,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
                 loading: false,
         })
     
-        it("With at least one input not filled the pay button doesn't work",async () => {
+        it("At least one required input not filled -> pay button doesn't work",async () => {
             const router = createMemoryRouter(routes, {initialEntries:["/home"]});
 
             render(<RouterProvider router={router}></RouterProvider>);
@@ -48,7 +48,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
         });
 
-        it("All the inputs filled -> page shows the finalized payment, then goes back to home", async () => {
+        it("All the inputs filled -> page shows the finalized payment -> goes back to home page", async () => {
             const router = createMemoryRouter(routes, {initialEntries:["/home"]});
             render(<RouterProvider router={router}></RouterProvider>);
             const usr = userEvent.setup();
@@ -78,7 +78,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
             expect(screen.getByRole("heading", {name: /Hello, welcome to our shop!/i})).toBeInTheDocument();
         });
 
-        it("All the inputs filled -> page shows the finalized payment, automatically goes back home", async () => {
+        it("All the inputs filled -> page shows the finalized payment -> automatically goes to home page", async () => {
             const router = createMemoryRouter(routes, {initialEntries:["/home"]});
             render(<RouterProvider router={router}></RouterProvider>);
             const usr = userEvent.setup();

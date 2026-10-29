@@ -17,7 +17,7 @@ const mockFetch = vi.hoisted(() => ({
 
     const router = createMemoryRouter(routes, {initialEntries:["/home"]});
     
-    it("renders correct navigation",async () => {
+    it("links are present in the page",async () => {
         mockFetch.useItemsFetching.mockReturnValue({
             items: [{id: 1,
                 title: "hello", 
@@ -37,7 +37,7 @@ const mockFetch = vi.hoisted(() => ({
 
     });
 
-    it("Successfully clicks the links", async () => {
+    it("click the links -> successfully navigates to the corresponding pages", async () => {
         mockFetch.useItemsFetching.mockReturnValue({
             items: [{id: 1,
                 title: "hello", 
@@ -54,16 +54,16 @@ const mockFetch = vi.hoisted(() => ({
         const usr = userEvent.setup();
 
         const home = screen.getByAltText(/home/i);
-        // const shop = screen.getByAltText(/shop/i);
-        // const cart = screen.getByAltText(/cart/i);
+        const shop = screen.getByAltText(/shop/i);
+        const cart = screen.getByAltText(/cart/i);
 
         await usr.click(home);
-        
-
         expect(screen.getByRole("heading", {name: /Hello, welcome to our shop!/i})).toBeInTheDocument();
 
-        // await usr.click(shop);
-        // await usr.click(cart);
+        await usr.click(shop);
+        expect(screen.getByRole("heading", {name: /Shop/i})).toBeInTheDocument();
 
+        await usr.click(cart);
+        expect(screen.getByRole("heading", {name: /Cart/i})).toBeInTheDocument();
     })
 });

@@ -17,7 +17,7 @@ import { render, screen } from "@testing-library/react";
     const router = createMemoryRouter(routes, {initialEntries:["/home"]});
   
 
-    it("returns items, no error, loading false", () => {
+    it("returns items, no error, loading false -> page correctly renders", () => {
         mockFetch.useItemsFetching.mockReturnValue({
             items: [{id: 1,
                 title: "hello", 
@@ -37,7 +37,7 @@ import { render, screen } from "@testing-library/react";
     })
 
 
-    it("returns null, error set, loading false", () => {
+    it("returns null, error set, loading false -> error page renders", () => {
         mockFetch.useItemsFetching.mockReturnValue({
             items: null,
             error: true,

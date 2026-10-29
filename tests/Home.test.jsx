@@ -26,7 +26,7 @@ import Home from "../src/components/home/Home";
 
     const router = createMemoryRouter(routes, {initialEntries:["/home"]});
 
-    it("Clicking the 'Add to cart' button does call the setCart", async () => {
+    it("Click the 'Add to cart' button -> call the setCart function", async () => {
 
         const usr = userEvent.setup();
 

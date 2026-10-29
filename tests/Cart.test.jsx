@@ -18,7 +18,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
 
 
-    describe("Cart component", () => {
+    describe("Cart", () => {
 
         mockFetch.useItemsFetching.mockReturnValue({
                 items: [{id: 1,
@@ -31,7 +31,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
                 loading: false,
         })
     
-        it("Clicking on the plus, minus, cancel buttons changes data correctly",async () => {
+        it("Click the plus, minus, cancel buttons on specific item -> changes data correctly",async () => {
             const router = createMemoryRouter(routes, {initialEntries:["/home"]});
 
             render(<RouterProvider router={router}></RouterProvider>);
@@ -60,7 +60,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
         });
 
-        it("Clicking on the checkout button links into the checkout page", async () => {
+        it("Click on the checkout button -> links into the checkout page", async () => {
         
             const router = createMemoryRouter(routes, {initialEntries:["/home"]});
             render(<RouterProvider router={router}></RouterProvider>);
@@ -72,7 +72,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
             expect(screen.getByRole("heading", {name: /checkout/i})).toBeInTheDocument();
         })
 
-        it("Clicking on the checkbox does change the checked state", async () => {
+        it("Click on the checkbox -> change the checked state", async () => {
             const router = createMemoryRouter(routes, {initialEntries:["/home"]});
             render(<RouterProvider router={router}></RouterProvider>);
             const usr = userEvent.setup();

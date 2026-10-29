@@ -38,7 +38,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
     });
 
 
-    it("renders the homepage after clicking the link", async () => {
+    it("Click the link to go back -> sends user to home page", async () => {
         mockFetch.useItemsFetching.mockReturnValue({
             items: [{id: 1,
                 title: "hello", 
@@ -63,7 +63,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
     });
 
 
-    it("Waiting for 3 seconds trigger the automatic navigation", async () => {
+    it("Waiting for 3 seconds -> trigger automatic navigation", async () => {
         mockFetch.useItemsFetching.mockReturnValue({
             items: [{id: 1,
                 title: "hello", 
