@@ -35,7 +35,12 @@
     padding:20px;
     margin-top: 20px;
     text-align: center;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.singleItemBorder:hover{
+    background-color: #152f6d;
+    transform: scale(1.05);
 }
 
 .singleItemBorder p{
