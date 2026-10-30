@@ -61,7 +61,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
             const fields = [
               ["Name and Surname:", "John Carmack"],
-              ["Address:", "Via Roma 23"],
+              ["Home Address:", "Via Roma 23"],
               ["Card number:", "12347638273"],
               ["Card owner:", "John Carmack"],
               ["CVV:", "345"],
@@ -91,7 +91,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
             const fields = [
               ["Name and Surname:", "John Carmack"],
-              ["Address:", "Via Roma 23"],
+              ["Home Address:", "Via Roma 23"],
               ["Card number:", "12347638273"],
               ["Card owner:", "John Carmack"],
               ["CVV:", "345"],

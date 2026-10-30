@@ -16,6 +16,12 @@
     border:2px solid red;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    padding:20px;
+}
+
+.itemsList img{
+    aspect-ratio: 3/2;
+    max-width: 200px;
 }
 
 .singleItem{
@@ -30,4 +36,8 @@
     padding:20px;
     margin-top: 20px;
     text-align: center;
+}
+
+.singleItemBorder p{
+    margin-top: 20px;
 }

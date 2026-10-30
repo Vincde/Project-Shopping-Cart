@@ -33,7 +33,7 @@ export default function Shop({items, handleAddItemToCart}){
                         <div key={el.id} onClick={() => setSelectedItem(el.id)} className={styles.singleItem}>
                             <div className={styles.singleItemBorder}>
                                 <img src={el.image} alt={`image n. ${el.id}`} />
-                                <p>Title: {el.title}</p>
+                                <p>{el.title}</p>
                             </div>
                         </div>
                     )
