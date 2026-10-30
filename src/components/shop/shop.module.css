@@ -46,3 +46,28 @@
 .singleItemBorder p{
     margin-top: 20px;
 }
+
+/* ---------------------------------------------------------------------- */
+/* START DETAILS SECTION FOR SINGLE ITEM */
+
+
+.detailSection{
+    background-color: var(--bcg_color_child);
+    margin: var(--margin_base);
+    border:2px solid var(--border_color);
+    color: var(--primary_font);
+    margin-top: 50px;
+}
+
+
+.closeIcon{
+    text-align: right;
+    margin: 30px 100px 0 0 ;
+}
+
+.closeIcon p{
+    display:inline;
+    border:2px solid gray;
+    border-radius: 10px;
+    padding:10px;
+}

@@ -11,8 +11,8 @@ export default function Shop({items, handleAddItemToCart}){
         <div>
             {selectedElement !== null ? (
                 <>
-                    <div>
-                        <div>
+                    <div className={styles.detailSection}>
+                        <div className={styles.closeIcon}>
                             <p onClick={() => setSelectedItem(null)}>X</p>
                         </div>
                         <h1>{selectedElement.title}</h1>
