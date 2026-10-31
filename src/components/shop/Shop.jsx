@@ -15,6 +15,7 @@ export default function Shop({items, handleAddItemToCart}){
                         <div className={styles.closeIcon}>
                             <p onClick={() => setSelectedItem(null)}>X</p>
                         </div>
+                        <img src={selectedElement.image} alt="image_description" className={styles.imageElement} />
                         <h1>{selectedElement.title}</h1>
                         <p>Description: {selectedElement.description}</p>
                         <p>Price: {selectedElement.price}</p>
