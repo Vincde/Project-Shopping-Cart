@@ -16,9 +16,9 @@ export default function Shop({items, handleAddItemToCart}){
                             <p onClick={() => setSelectedItem(null)}>X</p>
                         </div>
                         <h1>{selectedElement.title}</h1>
-                        <p>{selectedElement.description}</p>
-                        <p>{selectedElement.price}</p>
-                        <p>{selectedElement.rating.rate}</p>
+                        <p>Description: {selectedElement.description}</p>
+                        <p>Price: {selectedElement.price}</p>
+                        <p>Rate: {selectedElement.rating.rate}</p>
                         <button onClick={() => handleAddItemToCart(selectedElement)}>Add to Cart</button>
                     </div>
                 </>

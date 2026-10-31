@@ -69,5 +69,29 @@
     display:inline;
     border:2px solid gray;
     border-radius: 10px;
-    padding:10px;
+    padding:6px;
+    transition: all 0.4s ease;
+}
+
+.closeIcon > p:hover{
+    box-shadow: 2px 2px 2px whitesmoke;
+    background-color: rgba(175, 40, 16, 0.411);
+}
+
+.detailSection > h1{
+    margin-left: 30px;
+}
+
+.detailSection > p, .detailSection > button{
+    margin-left: 50px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.detailSection > button{
+    margin-bottom: 30px;
+    border:2px solid rgb(91, 146, 190);
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(102, 39, 39);
 }
