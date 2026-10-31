@@ -43,7 +43,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
             await usr.click(screen.getByText("hello"));
 
-            expect(screen.getByText("aaa")).toBeInTheDocument();
+            expect(screen.getByText("Description: aaa")).toBeInTheDocument();
 
         });
 
@@ -56,7 +56,7 @@ import { createMemoryRouter, RouterProvider } from "react-router";
             await usr.click(screen.getByAltText("shop"));
 
             await usr.click(screen.getByText("hello"));
-            expect(screen.getByText("aaa")).toBeInTheDocument();
+            expect(screen.getByText("Description: aaa")).toBeInTheDocument();
             await usr.click(screen.getByText("X"));
             expect(screen.getByText("hello")).toBeInTheDocument();
 
