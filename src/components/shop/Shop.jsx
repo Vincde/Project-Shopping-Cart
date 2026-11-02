@@ -3,9 +3,14 @@ import styles from './shop.module.css';
 
 export default function Shop({items, handleAddItemToCart}){
     const [selectedItem, setSelectedItem] = useState(null);
+    const [numberOfItem, setNumberOfItem] = useState(1); 
+    const [numberError, setNumberError] = useState(false);
     let selectedElement = null;
     selectedItem !== null ? selectedElement = items.find(el => el.id === selectedItem) : selectedElement = null; 
 
+    function handleSendItem() {
+        handleAddItemToCart(selectedElement);
+    }
 
     return(
         <div>
@@ -20,7 +25,11 @@ export default function Shop({items, handleAddItemToCart}){
                         <p>Description: {selectedElement.description}</p>
                         <p>Price: {selectedElement.price}</p>
                         <p>Rate: {selectedElement.rating.rate}</p>
-                        <button onClick={() => handleAddItemToCart(selectedElement)}>Add to Cart</button>
+                        <label htmlFor="numberOfItem">n. of items: </label>
+                        <input type="number" id="numberOfItem" className={styles.numberOfItem} value={numberOfItem} onChange={(e) => setNumberOfItem(e.target.value)} />
+                        <button className={styles.changeQuantityButton} onClick={() => setNumberOfItem((prev) => prev + 1)}>+</button>
+                        <button className={styles.changeQuantityButton} onClick={() => setNumberOfItem((prev) => prev - 1)}>-</button>
+                        <button onClick={handleSendItem}>Add to Cart</button>
                     </div>
                 </>
             ) 
