@@ -4,23 +4,25 @@ export default function useCart(){
     const [cart, setCart] = useState([]);
 
   function handleAddItemToCart(newItem){
-    const filteredCart = cart.filter(
-      (oldItem) => oldItem.id === newItem.id
-    );
+    setCart((prev) => {
+      const foundElement = prev.find((el) => el.id === newItem.id);
+      
+      if(foundElement) {
+        return prev.map((el) => 
+          el.id === newItem.id ? { ...el, numberOfPieces: el.numberOfPieces + 1}
+          : el
+        );
+      }
 
-    if(filteredCart.length === 0){
-      const finalItem = structuredClone(newItem);
-      finalItem.numberOfPieces = 1;
-      finalItem.checkedInput = true;
-      setCart(prev => [...prev, finalItem]);
-    }else{
-      const unFilteredCart = cart.filter(
-        (oldItem) => oldItem.id !== newItem.id
-      );
-      filteredCart[0].numberOfPieces += 1;
-      unFilteredCart.push(filteredCart[0]);
-      setCart([...unFilteredCart]);
-    }
+      return [
+        ...prev,
+        {
+          ...newItem,
+          numberOfPieces: 1,
+          checkedInput: true,
+        },
+      ];
+    });
   }
 
   
