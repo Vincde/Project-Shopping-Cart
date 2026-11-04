@@ -46,9 +46,9 @@ export default function Cart({cart, handleChangeCart, changeCheck}) {
                                 </div>
                                 <div className={styles.cartElementQuantity}>
                                     <p>Quantity: {el.numberOfPieces}</p>
-                                    <button onClick={() => handleChangeCart(el.id, "+", index)}>+</button>
-                                    <button onClick={() => handleChangeCart(el.id, "-", index)}>-</button>
-                                    <button onClick={() => handleChangeCart(el.id, "x", index)}>X</button>
+                                    <button onClick={() => handleChangeCart(el.id, "+")}>+</button>
+                                    <button onClick={() => handleChangeCart(el.id, "-")}>-</button>
+                                    <button onClick={() => handleChangeCart(el.id, "x")}>X</button>
                                 </div>
                             </div>
                         )

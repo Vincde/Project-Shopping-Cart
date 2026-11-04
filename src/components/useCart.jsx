@@ -26,41 +26,24 @@ export default function useCart(){
   }
 
   
-  function handleChangeCart(id, operation, index) {
-    const filteredCart = cart.filter((item) => item.id === id);
-    let newArray = cart.toReversed();
-    let cartWithDeletedItem;
+  function handleChangeCart(id, operation) {
+    setCart((prev) => {
 
-    switch(operation){
-      case "+":
-        filteredCart[0].numberOfPieces += 1;
-        newArray.splice(index, 1, filteredCart[0]);
-        newArray = newArray.toReversed();
-        setCart([...newArray]);
-        break;
-      case "-":
-        if(filteredCart[0].numberOfPieces <= 1){
-          cartWithDeletedItem = newArray.filter(
-          (cartItem) => cartItem.id !== id
-          );
-          cartWithDeletedItem = cartWithDeletedItem.toReversed();
-          setCart([...cartWithDeletedItem]);
-          break;
-        }else{
-          filteredCart[0].numberOfPieces -= 1;
-          newArray.splice(index, 1, filteredCart[0]);
-          newArray = newArray.toReversed();
-          setCart([...newArray]);
-          break;
+      if (operation === "x") {
+        return prev.filter((el) => el.id !== id);
+      }
+
+      return prev.map((el) => {
+
+        if(el.id === id){
+          if(operation === "+") return {...el, numberOfPieces: Math.min(100, el.numberOfPieces + 1)}
+          if(operation === "-") return {...el, numberOfPieces: Math.max(1, el.numberOfPieces - 1)}
         }
-      case "x":
-        cartWithDeletedItem = newArray.filter(
-          (cartItem) => cartItem.id !== id
-          );
-          cartWithDeletedItem = cartWithDeletedItem.toReversed();
-        setCart([...cartWithDeletedItem]);
-        break;
-    }
+
+        return el;
+
+      });
+    })
   }
 
   function changeCheck(id) {
