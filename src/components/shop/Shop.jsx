@@ -9,7 +9,14 @@ export default function Shop({items, handleAddItemToCart}){
     selectedItem !== null ? selectedElement = items.find(el => el.id === selectedItem) : selectedElement = null; 
 
     function handleSendItem() {
-        handleAddItemToCart(selectedElement);
+        if(numberOfItem < 1 || numberOfItem > 100) {
+            setNumberError(true);
+            return;
+        }else{
+            handleAddItemToCart(selectedElement);
+            setNumberError(false);
+        }
+        
     }
 
     return(
@@ -17,6 +24,9 @@ export default function Shop({items, handleAddItemToCart}){
             {selectedElement !== null ? (
                 <>
                     <div className={styles.detailSection}>
+                        {numberError === true ? (
+                        <p className={styles.errorMessage}>The inserted quantity is not valid. Retry with a different one!</p>
+                        ) : null}
                         <div className={styles.closeIcon}>
                             <p onClick={() => setSelectedItem(null)}>X</p>
                         </div>
