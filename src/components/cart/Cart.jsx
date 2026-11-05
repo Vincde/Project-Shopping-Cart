@@ -3,14 +3,10 @@ import styles from "./Cart.module.css";
 
 
 export default function Cart({cart, handleChangeCart, changeCheck}) {
-    let price = cart.reduce((total, el) => {
-        if(el.checkedInput === true){
-            return total + el.price*el.numberOfPieces;
-        }else{
-            return total;
-        }
-    }, 0);
+    let price = cart.reduce((total, el) => el.checkedInput === true ? total + el.price*el.numberOfPieces : (total), 0);
     price = price.toFixed(2);
+
+    
     let atLeastOneChecked;
     atLeastOneChecked = cart.find((el) => el.checkedInput === true); 
     if(atLeastOneChecked) atLeastOneChecked = true;   
