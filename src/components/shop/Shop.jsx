@@ -10,11 +10,13 @@ export default function Shop({items, handleAddItemToCart}){
 
     function handleSendItem() {
         if(numberOfItem < 1 || numberOfItem > 100) {
+            setNumberOfItem(1);
             setNumberError(true);
             return;
         }else{
-            handleAddItemToCart(selectedElement);
+            handleAddItemToCart(selectedElement, numberOfItem);
             setNumberError(false);
+            setNumberOfItem(1);
         }
         
     }

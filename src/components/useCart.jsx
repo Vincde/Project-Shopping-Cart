@@ -3,13 +3,13 @@ import { useState } from "react";
 export default function useCart(){
     const [cart, setCart] = useState([]);
 
-  function handleAddItemToCart(newItem){
+  function handleAddItemToCart(newItem, quantity = 1){
     setCart((prev) => {
       const foundElement = prev.find((el) => el.id === newItem.id);
       
       if(foundElement) {
         return prev.map((el) => 
-          el.id === newItem.id ? { ...el, numberOfPieces: el.numberOfPieces + 1}
+          el.id === newItem.id ? { ...el, numberOfPieces: el.numberOfPieces + Number(quantity)}
           : el
         );
       }
@@ -18,7 +18,7 @@ export default function useCart(){
         ...prev,
         {
           ...newItem,
-          numberOfPieces: 1,
+          numberOfPieces: Number(quantity),
           checkedInput: true,
         },
       ];
