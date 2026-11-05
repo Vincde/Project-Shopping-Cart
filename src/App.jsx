@@ -11,8 +11,16 @@ import Shop from "./components/shop/Shop";
 function App() {
   const { location } = useParams();
   /*
-    This is the app: here we will
-    render all the elements necessary for the three pages.
+    New objective: put a number near the cart icon of NavBar
+    that represents the items present in the cart.
+    The steps should be: 
+      - add cart as a prop to NavBar
+      - Inside navBar, create a variable to get the number
+      - Put a span element inside the Link, next to img
+      WARNING: this method makes most test to fail.
+      The issue is probably related to how many tests
+      starts with "/Home" as initial entry point, which
+      doesn't count the cart as part of the component
   */
 
   
