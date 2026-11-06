@@ -37,8 +37,15 @@
 }
 
 .itemsInTheCart{
-    color:rgb(171, 183, 202);
+    font-size: 13px;
+    border:1px solid gray;
+    border-radius: 50%;
+    padding:1px;
+    background-color: rgb(69, 30, 133);
+    font-weight:500;
+    color: whitesmoke;
     position: relative;
     top: -20px;
-    right: 5px;
+    right: 6px;
+
 }
