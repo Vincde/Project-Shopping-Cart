@@ -27,7 +27,18 @@
     transition: transform 0.5s ease;
 }
 
+.link{
+    text-decoration: none;
+}
+
 
 .link img:hover{
     transform: scale(1);
+}
+
+.itemsInTheCart{
+    color:rgb(171, 183, 202);
+    position: relative;
+    top: -20px;
+    right: 5px;
 }

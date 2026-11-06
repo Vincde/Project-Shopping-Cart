@@ -30,7 +30,7 @@ function App() {
 
  return(
   <div>
-    <NavBar></NavBar>
+    <NavBar cart={cart}></NavBar>
     { loading ? (
         <p>Loading...</p>
       ) : error ? (

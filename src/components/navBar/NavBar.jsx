@@ -5,7 +5,8 @@ import homeIcon from "./../../assets/home_icon.svg";
 import shopIcon from "./../../assets/shop_icon.svg";
 
 
-export default function NavBar() {
+export default function NavBar({cart}) {
+    const cartItems = cart.length;
     /*
     This navbar has to be on every page change.
     */
@@ -21,7 +22,7 @@ export default function NavBar() {
                         <Link to="/shop" className={styles.link}><img src={shopIcon} alt="shop" /></Link>
                     </li>
                     <li>
-                        <Link to="/cart" className={styles.link}><img src={cartIcon} alt="cart" /></Link>
+                        <Link to="/cart" className={styles.link}><img src={cartIcon} alt="cart" /><span className={styles.itemsInTheCart}>{cartItems}</span></Link>
                     </li>
                 </ul>
             </nav>
