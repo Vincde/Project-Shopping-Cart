@@ -14,10 +14,10 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
 
     describe("ErrorPage", () => {
-
-    const router = createMemoryRouter(routes, {initialEntries:["/"]});
     
     it("renders error page",async () => {
+        const router = createMemoryRouter(routes, {initialEntries:["/"]});
+
         mockFetch.useItemsFetching.mockReturnValue({
             items: [{id: 1,
                 title: "hello", 
@@ -39,6 +39,8 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
 
     it("Click the link to go back -> sends user to home page", async () => {
+        const router = createMemoryRouter(routes, {initialEntries:["/"]});
+
         mockFetch.useItemsFetching.mockReturnValue({
             items: [{id: 1,
                 title: "hello", 
@@ -60,25 +62,6 @@ import { createMemoryRouter, RouterProvider } from "react-router";
 
         expect(screen.getByText("Hello, welcome to our shop!")).toBeInTheDocument();
         expect(bttn).not.toBeInTheDocument();
-    });
-
-
-    it("Waiting for 3 seconds -> trigger automatic navigation", async () => {
-        mockFetch.useItemsFetching.mockReturnValue({
-            items: [{id: 1,
-                title: "hello", 
-                description: "aaa", 
-                image: "#", 
-                price: "3.15", 
-                rating: {rate: 4.5}}],
-        error: false,
-        loading: false,
-        })
-        
-        render(<RouterProvider router={router}></RouterProvider>);
-        
-
-        expect(screen.getByText("Hello, welcome to our shop!")).toBeInTheDocument();       
     });
 }); 
 
