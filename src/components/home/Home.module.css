@@ -73,3 +73,10 @@
 .addToCartBtn:hover{
     transform: scale(1.05);
 }
+
+
+@media (max-width: 450px){
+    .title{
+        font-size: 10px;
+    }
+}
