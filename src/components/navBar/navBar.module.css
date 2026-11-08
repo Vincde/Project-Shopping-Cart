@@ -49,3 +49,21 @@
     right: 6px;
 
 }
+
+
+@media (max-width: 650px) {
+    .list ul{
+        display:flex;
+        flex-direction: column;
+        gap:15px;
+        align-items: center;
+    }
+
+    .list li{
+        margin-left:0;
+    }
+
+    .list li:last-of-type{
+        margin-left:12px;
+    }
+}
