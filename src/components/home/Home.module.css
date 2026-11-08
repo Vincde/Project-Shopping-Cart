@@ -22,11 +22,10 @@
     display: grid;
     grid-template-rows:1fr 1fr;
     grid-template-columns:1fr 1fr 1fr;
-
 }
 
 .singleItem{
-    font-size: 22px;
+    font-size: 20px;
     border: 1px solid white;
     border-radius: 10px;
     text-align: center;
@@ -42,7 +41,6 @@
 }
 
 .moreInfo{
-    font-size: 18px;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -78,5 +76,16 @@
 @media (max-width: 450px){
     .title{
         font-size: 10px;
+    }
+}
+
+@media(max-width: 1030px){
+    .itemsContainer{
+        grid-template-columns: 1fr;
+    }
+
+    .moreInfo{
+        gap: 5px;
+        flex-wrap: wrap;
     }
 }
