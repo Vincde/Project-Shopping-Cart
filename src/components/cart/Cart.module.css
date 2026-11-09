@@ -96,3 +96,33 @@
     display:flex;
     gap: 10px;
 }
+
+
+@media (max-width: 1441px) {
+    .cartElement{
+        display:block;
+    }
+
+    .cartContainer{
+        margin: 0 50px;
+    }
+
+    .cartElementImgCheckbox{
+        display:block;
+        text-align: center;
+    }
+
+    .cartElementImgCheckbox input{
+        margin-bottom: 10px;
+    }
+
+    .recap{
+        visibility: hidden;
+    }
+
+    .recap button{
+        visibility: visible;
+        position: relative;
+        
+    }
+}
