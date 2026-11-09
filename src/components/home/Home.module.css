@@ -75,8 +75,10 @@
 
 @media (max-width: 450px){
     .title{
-        font-size: 10px;
+        font-size: 8px;
     }
+
+
 }
 
 @media(max-width: 1030px){
@@ -87,5 +89,9 @@
     .moreInfo{
         gap: 5px;
         flex-wrap: wrap;
+    }
+
+    .homeContainer{
+        margin: 0 70px;
     }
 }
