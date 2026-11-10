@@ -1,0 +1,9 @@
+.errorPage > *{
+    font-size: 2rem;
+    text-align: center;
+    display:block;
+}
+
+.errorPage h1{
+    margin-top: 200px;
+}
