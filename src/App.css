@@ -4,3 +4,11 @@
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
 }
+
+
+:root{
+    --background: #142d4c;
+    --text: #ececec;
+    --primary: #385170;
+    --accent: #9fd3c7;
+}

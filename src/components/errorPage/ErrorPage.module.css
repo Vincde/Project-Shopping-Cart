@@ -1,9 +1,29 @@
-.errorPage > *{
-    font-size: 2rem;
-    text-align: center;
-    display:block;
+body{
+    background-color: var(--background);
+    color: var(--text);
 }
 
-.errorPage h1{
+.errorPage{
+    max-width: 800px;
+    margin: 200px auto 0;
+    background-color: var(--primary);
+    border:2px solid var(--accent);
     margin-top: 200px;
+    border-radius: 10px;
+    padding:20px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.errorPage > h1{
+    margin-bottom: 30px;
+}
+
+
+
+.link{
+    border-radius: 10px;
+    color: var(--text);
+    display:block;
+    color:red;
 }
