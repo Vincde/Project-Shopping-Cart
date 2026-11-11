@@ -32,7 +32,7 @@ import { render, screen } from "@testing-library/react";
         render(<RouterProvider router={router}></RouterProvider>);
 
         
-        expect(screen.getByRole("heading", {name: /See our discounts!/i})).toBeInTheDocument();
+        expect(screen.getByText(/See our discounts!/)).toBeInTheDocument();
         
     })
 

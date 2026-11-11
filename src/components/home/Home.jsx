@@ -6,7 +6,7 @@ function Home({items, handleAddItemToCart}){
             <main>
                 <section className={styles.title}>
                     <h1>Hello, welcome to our shop!</h1>
-                    <h2>See our discounts!</h2>
+                    <p>See our discounts!</p>
                 </section>
                 <section className={styles.itemsContainer}>
                     {items.map((el) => {
@@ -18,9 +18,9 @@ function Home({items, handleAddItemToCart}){
                                     <p>Price: {el.price}</p>
                                     <p>Rating: {el.rating.rate}</p>
                                 </div>
-                                <button onClick={() => handleAddItemToCart(el)} className={styles.addToCartBtn}>Add to cart</button>
+                                <button onClick={() => handleAddItemToCart(el)} className={styles.addToCartBtn} >Add to cart</button>
                             </div>
-                        )
+                        );
                     })}
                 </section>
             </main>
