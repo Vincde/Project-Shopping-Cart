@@ -18,7 +18,7 @@ export default function NavBar({cart}) {
                     <Link to="/shop" className={styles.link}><img src={shopIcon} alt="shop" /></Link>
                 </li>
                 <li>
-                    <Link to="/cart" className={styles.link}><img src={cartIcon} alt="cart" /><span className={styles.itemsInTheCart}>{cartItems}</span></Link>
+                    <Link to="/cart" className={styles.link}><img src={cartIcon} alt="cart" /><span className={styles.cartNumbersIcon}>{cartItems}</span></Link>
                 </li>
             </ul>
         </nav>

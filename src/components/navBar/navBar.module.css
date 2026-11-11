@@ -20,6 +20,17 @@
     text-decoration: none;
 }
 
+.link{
+    position:relative;
+    border:2px solid red;
+}
+
+.cartNumbersIcon{
+    position: absolute;
+    top:-15px;
+    left:16px;
+}
+
 
 /*
 .navBarList a{
