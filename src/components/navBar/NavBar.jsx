@@ -9,7 +9,7 @@ export default function NavBar({cart}) {
     const cartItems = cart.length;
 
     return(
-        <nav className={styles.list}>
+        <nav className={styles.navBar}>
             <ul className={styles.navBarList}>
                 <li>
                     <Link to="/home" className={styles.link}><img src={homeIcon} alt="home" /></Link>

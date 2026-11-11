@@ -1,8 +1,8 @@
-.list{
+.navBar{
     border:2px solid var(--accent);
     border-radius: 10px;
     max-width: 800px;
-    margin:20px auto;
+    margin:30px auto;
     background-color: var(--primary); 
 }
 
@@ -10,38 +10,52 @@
     display:flex;
     justify-content: space-evenly;
     align-items: center;
-    gap:80px;
+    gap:60px;
     list-style-type: none;
     min-height: 80px;
 }
 
+.navBarList li{
+    padding:10px;
+    border:2px solid var(--accent);
+    border-radius: 15px;
+    transition : 0.3s;
+    box-shadow: 0px 0px 5px;
+}
 
-.navBarList a{
-    text-decoration: none;
+.navBarList li:hover{
+    color: #38bdf8;
+    animation: ripple 0.5s ease;
 }
 
 .link{
     position:relative;
-    border:2px solid red;
+    text-decoration: none;
 }
 
 .cartNumbersIcon{
+    font-weight: bold;
+    color: white;
+    background-color: #FF6B6B;
     position: absolute;
-    top:-15px;
-    left:16px;
-}
-
-
-/*
-.navBarList a{
-    border:2px solid red;
-    padding:5px;
-    display:block;
-}
-
-.itemsInTheCart{
-    position: relative;
     top: -15px;
-    right: 6px;
+    left: 16px;
+
+    min-width: 15px;
+    min-height: 15px;
+    padding: 2px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
 }
-*/
+
+
+@keyframes ripple {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
