@@ -36,5 +36,9 @@
 }
 
 .singleItem h3{
+    max-width: 200px;
+    overflow-wrap:anywhere;
     text-align:center;
+    padding:5px;
+    margin-bottom: 10px;
 }
