@@ -2,8 +2,8 @@ import styles from "./Home.module.css"
 
 function Home({items, handleAddItemToCart}){
     return(
-        <div className={styles.homeContainer}>
-            <main>
+        <div>
+            <main className={styles.homeContainer}>
                 <section className={styles.title}>
                     <h1>Hello, welcome to our shop!</h1>
                     <p>See our discounts!</p>

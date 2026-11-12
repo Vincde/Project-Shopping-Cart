@@ -1,3 +1,15 @@
+img{
+    max-width: 100px;
+}
+
+.homeContainer{
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--primary);
+}
+
 .title{
     max-width: 800px;
     text-align: center;
