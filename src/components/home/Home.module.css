@@ -55,3 +55,32 @@
 .price{
     margin-bottom: 2px;
 }
+
+.addToCartBtn{
+    display:block;
+    margin: 10px auto 5px auto;
+    padding: 20px;    
+    color: var(--text);
+    font-size: 1rem;
+
+    
+    background: linear-gradient(
+        110deg,
+        #385170,
+        #456987,
+        #528b91,
+        #385170
+    );
+    background-size: 200% 200%;
+    border: 1px solid rgba(159, 211, 199, 0.2);
+    border-radius: 8px;
+    transition: all 0.4s ease;
+}
+
+.addToCartBtn:hover{
+    background-position: 100% 50%;
+    box-shadow:
+        0 0 12px rgba(159, 211, 199, 0.25),
+        0 0 30px rgba(83, 139, 145, 0.25);
+    transform: translateY(-3px) scale(1.02);
+}
