@@ -1,0 +1,44 @@
+.shopContainer img{
+    max-width: 200px;
+    height: 200px;
+    object-fit:cover;
+    border-radius: 10px;
+}
+
+.shopContainer{
+    max-width: 1400px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--primary);
+}
+
+
+.title{
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    border:2px solid gray;
+}
+
+.itemsList{
+    max-width: 1200px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px auto;
+    gap:50px;
+}
+
+.singleItem{
+    border:2px solid gray;
+    padding:10px;
+    border-radius: 7px;
+}
+
+.singleItemBorder p{
+    max-width: 200px;
+    overflow-wrap:anywhere;
+    text-align:center;
+    padding:5px;
+}
