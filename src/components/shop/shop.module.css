@@ -19,6 +19,7 @@
     text-align: center;
     margin: 0 auto;
     border:2px solid gray;
+    font-size: 2rem;
 }
 
 .itemsList{
@@ -31,9 +32,15 @@
 }
 
 .singleItem{
-    border:2px solid gray;
-    padding:10px;
+    border:5px solid gray;
+    padding:7px;
     border-radius: 7px;
+    transition: all 0.3s ease;
+}
+
+.singleItem:hover{
+    transform: translateY(-3px) scale(1.02);
+
 }
 
 .singleItemBorder p{
@@ -41,4 +48,6 @@
     overflow-wrap:anywhere;
     text-align:center;
     padding:5px;
+    font-size: 1.3rem;
+    margin-top: 5px;
 }
