@@ -1,4 +1,4 @@
-.shopContainer img{
+.shopComponent img{
     max-width: 200px;
     height: 200px;
     object-fit:cover;
@@ -50,4 +50,28 @@
     padding:5px;
     font-size: 1.3rem;
     margin-top: 5px;
+}
+
+
+/*----------------------- DETAILS SECTION FOR EACH ITEM ---------------------------- */
+
+
+.detailSection{
+    background-color: var(--primary);
+    border:2px solid red;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.errorMessage{
+    max-width: 1000px;
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0 auto;
+    border:2px solid red;
+    box-shadow: 0px 0px 1px;
+    padding:5px;
+    margin-top: 10px;
+    font-weight: bold;
 }

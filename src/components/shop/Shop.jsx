@@ -22,7 +22,7 @@ export default function Shop({items, handleAddItemToCart}){
     }
 
     return(
-        <div>
+        <div className={styles.shopComponent}>
             {selectedElement !== null ? (
                 <>
                     <div className={styles.detailSection}>
