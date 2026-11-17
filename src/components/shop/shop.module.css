@@ -110,4 +110,21 @@
     color:black;
 }
 
+.changeQuantityButton{
+    appearance: none;
+    padding:10px;
+    border:3px solid gray;
+    border-radius: 10px;
+    background-color: var(--primary);
+    color: var(--text);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+
+.changeQuantityButton:hover{
+    border:3px solid rgb(86, 117, 113);
+}
+
 
