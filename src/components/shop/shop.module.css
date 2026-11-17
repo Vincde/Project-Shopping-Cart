@@ -76,3 +76,12 @@
     margin-top: 10px;
     font-weight: bold;
 }
+
+
+.closeIcon{
+    max-width: 850px;
+    border:2px solid red;
+    display:flex;
+    justify-content: end;
+    margin: 30px auto;
+}
