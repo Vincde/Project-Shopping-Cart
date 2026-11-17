@@ -32,22 +32,24 @@ export default function Shop({items, handleAddItemToCart}){
                             ) 
                             : null
                         }
+                        <div className={styles.itemDetails}>
+                            <div className={styles.closeIcon}>
+                                <p onClick={() => setSelectedItem(null)}>X</p>
+                            </div>
 
-                        <div className={styles.closeIcon}>
-                            <p onClick={() => setSelectedItem(null)}>X</p>
-                        </div>
-
-                        <img src={selectedElement.image} alt="image_description" className={styles.imageElement} />
-                        <h1>{selectedElement.title}</h1>
-                        <p>Description: {selectedElement.description}</p>
-                        <p>Price: {selectedElement.price}</p>
-                        <p>Rate: {selectedElement.rating.rate}</p>
-                        <label htmlFor="numberOfItem">n. of items: </label>
-                        <input type="number" id="numberOfItem" className={styles.numberOfItem} value={numberOfItem} onChange={(e) => setNumberOfItem(e.target.value)} />
                         
-                        <button className={styles.changeQuantityButton} onClick={() => setNumberOfItem((prev) => prev + 1)}>+</button>
-                        <button className={styles.changeQuantityButton} onClick={() => setNumberOfItem((prev) => prev - 1)}>-</button>
-                        <button onClick={handleSendItem}>Add to Cart</button>
+                            <img src={selectedElement.image} alt="image_description" className={styles.imageElement} />
+                            <h1>{selectedElement.title}</h1>
+                            <p>Description: {selectedElement.description}</p>
+                            <p>Price: {selectedElement.price}</p>
+                            <p>Rate: {selectedElement.rating.rate}</p>
+                            <label htmlFor="numberOfItem">n. of items: </label>
+                            <input type="number" id="numberOfItem" className={styles.numberOfItem} value={numberOfItem} onChange={(e) => setNumberOfItem(e.target.value)} />
+                            
+                            <button className={styles.changeQuantityButton} onClick={() => setNumberOfItem((prev) => prev + 1)}>+</button>
+                            <button className={styles.changeQuantityButton} onClick={() => setNumberOfItem((prev) => prev - 1)}>-</button>
+                            <button onClick={handleSendItem}>Add to Cart</button>
+                        </div>
                     </div>
                 </>
             ) 

@@ -60,7 +60,7 @@
     background-color: var(--primary);
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 1px;
+    padding: 1px; 
 }
 
 
@@ -78,15 +78,23 @@
 }
 
 
+.itemDetails{
+    border:2px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
 .closeIcon{
-    max-width: 750px;
+    max-width: 600px;
     display:flex;
     justify-content: end;
-    margin: 30px auto;
+    margin: 5px auto;
 }
 
 .closeIcon > p{
-    margin: 10px;
+    margin: 5px;
     border:2px solid gray;
     padding:10px;
     border-radius: 10px;
@@ -101,3 +109,5 @@
     background-color: #cf9a9a;
     color:black;
 }
+
+
