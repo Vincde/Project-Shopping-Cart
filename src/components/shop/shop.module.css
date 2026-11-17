@@ -86,6 +86,19 @@
     margin: 20px auto;
 }
 
+.itemDetails > p, .itemDetails > label{
+    font-size: 1.1rem;
+}
+
+.itemDetails > input{
+    appearance: none;
+    border:3px solid var(--accent);
+    padding:6px;
+    font-size: 1.05;
+    background-color: gray;
+    color:white;
+}
+
 .closeIcon{
     max-width: 600px;
     display:flex;
@@ -95,7 +108,7 @@
 
 .closeIcon > p{
     margin: 5px;
-    border:2px solid gray;
+    border:2px solid var(--accent);
     padding:10px;
     border-radius: 10px;
     font-size: 1.2rem;
@@ -107,13 +120,13 @@
 .closeIcon > p:hover{
     box-shadow: 0px 0px 5px;
     background-color: #cf9a9a;
+    border:2px solid gray;
     color:black;
 }
 
 .changeQuantityButton{
-    appearance: none;
     padding:10px;
-    border:3px solid gray;
+    border:3px solid var(--accent);
     border-radius: 10px;
     background-color: var(--primary);
     color: var(--text);
@@ -123,8 +136,15 @@
 }
 
 
-.changeQuantityButton:hover{
-    border:3px solid rgb(86, 117, 113);
+.changeQuantityButton:hover, .addToCartButton:hover{
+    border:3px solid gray;
 }
 
-
+.addToCartButton{
+    border:3px solid var(--accent);
+    padding:10px;
+    background-color: var(--primary);
+    color:var(--text);
+    font-size: 1.09rem;
+    border-radius: 10px;
+}
