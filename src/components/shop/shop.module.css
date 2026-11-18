@@ -79,7 +79,7 @@
 
 
 .itemDetails{
-    border:2px solid gray;
+    border:2px solid var(--accent);
     border-radius: 10px;
     padding: 20px;
     max-width: 700px;
@@ -147,4 +147,27 @@
     color:var(--text);
     font-size: 1.09rem;
     border-radius: 10px;
+}
+
+.itemDetails > div:last-of-type{
+    display:inline;
+}
+
+@media (max-width: 650px) {
+    .itemDetails > div:last-of-type{
+        display:block;
+        margin-top: 20px;
+    }
+
+    .itemDetails > div:last-of-type > button:first-of-type{
+        margin: 0;
+    }
+}
+
+@media(max-width: 342px){
+    .itemDetails > div:last-of-type > button{
+        margin-top: 10px;
+    }
+
+    
 }

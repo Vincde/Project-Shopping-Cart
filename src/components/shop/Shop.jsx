@@ -45,10 +45,12 @@ export default function Shop({items, handleAddItemToCart}){
                             <p>Rate: {selectedElement.rating.rate}</p>
                             <label htmlFor="numberOfItem">n. of items: </label>
                             <input type="number" id="numberOfItem" className={styles.numberOfItem} value={numberOfItem} onChange={(e) => e.target.value === "" ? setNumberOfItem(0) : setNumberOfItem(parseInt(e.target.value))} />
-                            
-                            <button className={styles.changeQuantityButton} onClick={() => setNumberOfItem((prev) => (prev + 1))}>+</button>
-                            <button className={styles.changeQuantityButton} onClick={() => setNumberOfItem((prev) => (prev - 1))}>-</button>
-                            <button className={styles.addToCartButton} onClick={handleSendItem}>Add to Cart</button>
+                        
+                            <div>
+                                <button className={styles.changeQuantityButton} onClick={() => setNumberOfItem((prev) => (prev + 1))}>+</button>
+                                <button className={styles.changeQuantityButton} onClick={() => setNumberOfItem((prev) => (prev - 1))}>-</button>
+                                <button className={styles.addToCartButton} onClick={handleSendItem}>Add to Cart</button>
+                            </div>
                         </div>
                     </div>
                 </>
