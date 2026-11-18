@@ -14,4 +14,22 @@
 
 .cartTitle{
     font-size: 1.7rem;
+    border:2px solid gray;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 20px auto 40px auto;
+    padding: 5px;
+}
+
+
+.mainContent{
+    margin: 0 auto;
+    border:2px solid red;
+}
+
+.mainContent img {
+    max-width: 200px;
+    height: 200px;
+    object-fit:cover;
+    border-radius: 10px;
 }
