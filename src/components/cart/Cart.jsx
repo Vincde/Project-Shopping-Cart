@@ -13,9 +13,8 @@ export default function Cart({cart, handleChangeCart, changeCheck}) {
 
     return(
         <div className={styles.cartContainer}>
-            <div className={styles.cartTitles}>
+            <div className={styles.cartTitle}>
                 <h2>Cart</h2>
-                <h2>Recap</h2>
             </div>
 
             <div className={styles.mainContent}>
@@ -49,12 +48,13 @@ export default function Cart({cart, handleChangeCart, changeCheck}) {
                             </div>
                         )
                     })) : (
-                        <p>You have no elements in the cart!</p>
+                        <p className={styles.noElements}>You have no elements in the cart!</p>
                     )}
                 </section>
                 
                 {cart.length > 0 && atLeastOneChecked && (
                 <section className={styles.recap}>
+                    <h2>Recap</h2>
                     <h3>Total price: €{price}</h3>
                     <button><Link to="/checkout">Checkout</Link></button>
                 </section>

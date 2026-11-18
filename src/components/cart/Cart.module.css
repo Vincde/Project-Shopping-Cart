@@ -1,0 +1,17 @@
+.cartContainer{
+    max-width: 1200px;
+    background-color: var(--primary);
+    margin: 0 auto;
+    text-align: center;
+    border:2px solid var(--accent);
+    border-radius: 10px;
+}
+
+.noElements{
+    color:var(--text);
+    font-size: 1.5rem;
+}
+
+.cartTitle{
+    font-size: 1.7rem;
+}
