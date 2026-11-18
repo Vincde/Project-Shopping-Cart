@@ -23,7 +23,7 @@ export default function Cart({cart, handleChangeCart, changeCheck}) {
                         const imageDescr = "product n." + index;
                         return(
                             <div key={el.id} className={styles.cartElement}>
-                                <div className={styles.cartElementImgCheckbox}>
+                                <div className={styles.cartElementImgAndCheckbox}>
                                     <input type="checkbox" checked={el.checkedInput} onChange={() => changeCheck(el.id)} />
                                     <img src={el.image} alt={imageDescr} />
                                 </div>
