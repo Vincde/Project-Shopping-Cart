@@ -28,13 +28,13 @@ export default function Cart({cart, handleChangeCart, changeCheck}) {
                                     <img src={el.image} alt={imageDescr} />
                                 </div>
 
-                                <div>
-                                    <h2 className={styles.cartElementTitle}>{el.title}</h2>
-                                    <div className={styles.cartElementDescription}>
+                                <div className={styles.cartElementDescription}>
+                                    <h2 className={styles.cartElementDescriptionTitle}>{el.title}</h2>
+                                    <div className={styles.cartElementDescriptionInfo}>
                                         <p>Category: {el.category}</p>
                                         <p>Description: {el.description}</p>
                                     </div>
-                                    <div className={styles.cartElementPrice}>
+                                    <div className={styles.cartElementDescriptionPrice}>
                                         <p>Price: {el.price}</p>
                                         <p>Rating: {el.rating.rate}</p>
                                     </div>

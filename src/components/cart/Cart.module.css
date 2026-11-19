@@ -41,13 +41,29 @@
     display:flex;
     flex-wrap: wrap;
     padding:10px;
-    border:2px solid red;
+    border:2px solid gray;
+    border-radius: 10px;
+    gap:20px;
+    margin-left: 10px;
 }
 
 .cartElementImgAndCheckbox{
     display:flex;
     gap:20px;
     align-items: center;
+}
+
+.cartElementDescription{
+    border:2px solid red;
+    max-width:40%;
+}
+
+.cartElementDescription *{
+    margin-bottom: 10px;
+}
+
+.cartElementDescriptionTitle, .cartElementDescriptionInfo, .cartElementDescriptionPrice{
+    text-align: start;
 }
 
 .cartElementImgAndCheckbox input{
