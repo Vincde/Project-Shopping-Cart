@@ -1,0 +1,22 @@
+.checkoutPage img{
+    max-width: 200px;
+    height: 200px;
+    object-fit:cover;
+    border-radius: 10px;
+}
+
+.checkoutPage{
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: var(--primary);
+    border:2px solid gray;
+    border-radius: 10px;
+}
+
+.checkoutTitle{
+    max-width: 500px;
+    margin: 15px auto;
+    text-align: center;
+    border:2px solid gray;
+    border-radius: 7px;
+}
