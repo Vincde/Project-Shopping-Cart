@@ -169,3 +169,23 @@
         box-shadow: 0 0 0 2px rgba(111, 181, 162, 0.35);
     }
 }
+
+
+@media (max-width: 800px) {
+    .cartElement{
+        display:block;
+        text-align: center;
+    }
+
+    .cartElementImgAndCheckbox{
+        flex-direction: column;
+    }
+
+    .cartElementQuantity{
+        display:block;
+    }
+
+    .cartElementDescription * {
+        margin-bottom: 20px;
+    }
+}
