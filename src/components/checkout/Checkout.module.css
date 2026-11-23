@@ -20,3 +20,21 @@
     border:2px solid gray;
     border-radius: 7px;
 }
+
+.summary{
+    margin: 50px 30px 50px 30px;
+    display:flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap:20px;
+}
+
+.summary > * {
+    flex-shrink: 0;
+}
+
+.summary p {
+    text-align: center;
+    font-size: 1.2rem;
+}
