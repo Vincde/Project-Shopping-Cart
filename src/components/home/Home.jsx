@@ -1,13 +1,20 @@
 import { useState } from "react";
 import styles from "./Home.module.css"
+import Popup from "./../popup/Popup";
 
 function Home({items, handleAddItemToCart}){
     const [popup, setPopup] = useState(false);
 
+
+    function handleSendToCart(el){
+        handleAddItemToCart(el);
+        setPopup(true);
+    }
+
     return(
         <div>
+            {popup === true ? (<Popup setPopup={setPopup}></Popup>) : (null)}
             <main className={styles.homeContainer}>
-                {popup === false ? (<Popup></Popup>) : (null)}
                 <section className={styles.title}>
                     <h1>Hello, welcome to our shop!</h1>
                     <p>See our discounts!</p>
@@ -22,7 +29,7 @@ function Home({items, handleAddItemToCart}){
                                     <p>Price: {el.price}</p>
                                     <p>Rating: {el.rating.rate}</p>
                                 </div>
-                                <button onClick={() => handleAddItemToCart(el)} className={styles.addToCartBtn} >Add to cart</button>
+                                <button onClick={() => handleSendToCart(el)} className={styles.addToCartBtn} >Add to cart</button>
                             </div>
                         );
                     })}
