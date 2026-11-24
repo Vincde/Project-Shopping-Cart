@@ -1,9 +1,13 @@
+import { useState } from "react";
 import styles from "./Home.module.css"
 
 function Home({items, handleAddItemToCart}){
+    const [popup, setPopup] = useState(false);
+
     return(
         <div>
             <main className={styles.homeContainer}>
+                {popup === false ? (<Popup></Popup>) : (null)}
                 <section className={styles.title}>
                     <h1>Hello, welcome to our shop!</h1>
                     <p>See our discounts!</p>
