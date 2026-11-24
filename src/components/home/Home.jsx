@@ -3,17 +3,17 @@ import styles from "./Home.module.css"
 import Popup from "./../popup/Popup";
 
 function Home({items, handleAddItemToCart}){
-    const [popup, setPopup] = useState(false);
+    const [popup, setPopup] = useState({status: false, popupKey: 0});
 
 
     function handleSendToCart(el){
         handleAddItemToCart(el);
-        setPopup(true);
+        setPopup((prev) => ({status: true, popupKey: prev.popupKey + 1 }));
     }
 
     return(
         <div>
-            {popup === true ? (<Popup setPopup={setPopup}></Popup>) : (null)}
+            {popup.status === true ? (<Popup key={popup.popupKey} setPopup={setPopup}></Popup>) : (null)}
             <main className={styles.homeContainer}>
                 <section className={styles.title}>
                     <h1>Hello, welcome to our shop!</h1>

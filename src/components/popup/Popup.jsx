@@ -8,7 +8,7 @@ export default function Popup({ setPopup }){
         useEffect(() => {
     
             if(countdown === 0) {
-                setPopup(false);
+                setPopup((prev) => ({status: false, popupKey: prev.key + 1}));
                 return;
             }
     
@@ -18,6 +18,7 @@ export default function Popup({ setPopup }){
     
             return () => clearTimeout(timer);
         },[countdown, setPopup]);
+
 
     return(
         <div>
